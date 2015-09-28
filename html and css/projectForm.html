@@ -1,0 +1,81 @@
+<!--
+Group 7: Andrew Kordecki
+         Jonathan Schrader
+         Michael Reyes
+         Nicoli William
+  
+GroupProject:Project Tracking Software  
+9/8/2015
+-->
+
+<!DOCTYPE html> <!-- Beginning of the page-->
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" />
+    <!-- STATUS BAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <title>Project Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+
+<body>
+    <div id = "wrapper">
+    <!-- Header wireframe section -->
+    <header>
+        <h1>TRACK'IT</h1>
+    </header>
+
+    <!-- Navigation wireframe section-->
+    <nav>
+        <ul>
+            <li><a href= "#">Projects</a></li>
+            <li><a href = "#">Commit</a></li>
+            <li><a href = "#">Profile</a></li>
+            <li><a href = "#">Search</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <!-- Main body wireframe section -->
+        <main>  
+        <div class = "content">
+        <h2>Project Form</h2>
+            <h4>Fill out the required fields and press submit to create project.</h4>
+            </br>
+                <form>
+                    <fieldset> 
+                        <br>
+                            <label>Project Title: </label>
+                                <input type="text" name="text_box" autofocus required><br><br>
+                            <label>Estimated Completion Date: </label>
+                                <input type="date" name="date_box" requirment><br><br>                         
+                            <label>Estimated Hours to Complete: </label>
+                                <input type="number" name="numerical_selector_box" min="1" max="1000" required><br><br>
+                            <label>Project Description: </label>
+                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
+                            <label>Project Requirments: </label>
+                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
+                            <label>Team Members: </label>
+                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
+                            <h6>*Required Fields</h6><br>
+                            <div class = "buttonSpace"><button type="button" class="btn btn-primary">Submit</button></div><br><br>
+                            
+                    </fieldset>
+                </form>
+        </div>
+
+        <!-- Footer wireframe section -->
+        <footer>
+            Copyright &copy; 2015 Project 7 Productions 
+        </footer>
+
+        </main> <!-- End main wireframe -->
+    </div>  <!-- End wrapper wireframe -->    
+</body> <!-- End body wireframe -->
+</html> <!-- End accomodations page -->

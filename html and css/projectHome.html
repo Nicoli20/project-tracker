@@ -1,0 +1,186 @@
+<!--
+Group 7: Andrew Kordecki
+         Jonathan Schrader
+         Michael Reyes
+         Nicoli William
+  
+GroupProject:Project Tracking Software  
+9/8/2015
+-->
+
+<!DOCTYPE html> <!-- Beginning of the page-->
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" />
+    <!-- STATUS BAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="bootstrap-transition.js"></script> 
+    <!-- JAVA SCRIPT -->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      google.setOnLoadCallback(drawBasic);
+      
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Weekly Goal: 20hrs',  9],
+          ['Person1: 2hrs', 2],
+          ['Person2: 4hrs',  4],
+          ['Person3: 2hrs', 2],
+          ['Person4: 3hrs', 3]
+        ]);
+
+        var options = {
+          title: 'Employee Contribution',
+          chartArea: {width: '80%'},
+          pieHole: 0.3,
+          //slices: {
+            //0: { color: '#3369E8' },
+            //1: { color: '#AEC2FF' },
+            //2: { color: '#5C85FF' },
+            //3: { color: '#B6C4D4' },
+            //4: { color: '#7AA3CC' }
+          //}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+      
+      function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Weeks', 'Hours Committed Per Week',],
+        ['Week 1', 21],
+        ['Week 2', 33],
+        ['Week 3', 11],
+        ['Week 4', 21],
+      ]);
+
+      var options = {
+        title: 'Hours Committed Per Week',
+        chartArea: {width: '60%'},
+        hAxis: {
+          title: 'Total Hours',
+          minValue: 0
+        },     
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+
+    </script>
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+
+<body>
+    <div id = "wrapper">
+    <!-- Header wireframe section -->
+    <header>
+        <h1>TRACK'IT</h1>
+    </header>
+
+    <!-- Navigation wireframe section-->
+    <nav>
+        <ul>
+            <li><a href= "#">Projects</a></li>
+            <li><a href = "#">Commit</a></li>
+            <li><a href = "#">Profile</a></li>
+            <li><a href = "#">Search</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <!-- Main body wireframe section -->
+        <main>  
+        <div class = "content">
+            <div id = "header">
+                <b><a>PROJECT</a> <a>COMMIT</a> <a>TIME</a> <a>DATE</a></b>
+            </div>
+            <div class = "commits">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                </button>  
+                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Project1 Commit1 12:07AM 9/10/2015
+                </a>
+                    <div class="collapse" id="collapseExample">
+                      <div class="well">
+                        ...
+                      </div>
+                    </div>        
+               
+            </div>
+            <div class = "commits">  
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                </button>            
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                  Project1 Commit2 12:10AM 9/10/2015
+                </a>
+                    <div class="collapse" id="collapseExample2">
+                      <div class="well">
+                        ...
+                      </div>
+                    </div>    
+            </div>
+                        <div class = "commits">  
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+                </button>            
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                  Project1 Commit3 12:16AM 9/10/2015
+                </a>
+                    <div class="collapse" id="collapseExample3">
+                      <div class="well">
+                        ...
+                      </div>
+                    </div>    
+            </div>
+            <div class = "description">
+                <div class = "progressBar">
+                    <h4><br>Status of Project</h4>
+                    <div class="progress">
+                           <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="900">
+                               70% Completed  
+                           </div>
+                    </div>
+                </div>
+                <h4>Project Description:</h4><div class = "contentInfo"></div>
+                <h4>Project Revision:</h4><div class = "contentInfo"></div>
+                <h4>Problems Detected:</h4><div class = "contentInfo"></div>
+                <h4>Estimated Completion:</h4><div class = "contentInfo"></div>
+                
+            <div id="donutchart"></div> 
+            <div id="chart_div"></div>
+            <div class = "buttonSpace">
+                <button type="button" class="btn btn-primary">Edit</button>
+                <button type="button" class="btn btn-warning">Comment</button>
+            </div>
+            
+            <div class="description-footer">Project1: Commit3</div>
+            
+            </div>
+        </div>
+
+        <!-- Footer wireframe section -->
+        <footer>
+            Copyright &copy; 2015 Project 7 Productions 
+        </footer>
+
+        </main> <!-- End main wireframe -->
+    </div>  <!-- End wrapper wireframe -->    
+</body> <!-- End body wireframe -->
+</html> <!-- End accomodations page -->
