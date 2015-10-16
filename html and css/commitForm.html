@@ -33,8 +33,8 @@ GroupProject:Project Tracking Software
     <!-- Navigation wireframe section-->
     <nav>
         <ul>
-            <li><a href= "#">Projects</a></li>
-            <li><a href = "#">Commit</a></li>
+            <li><a href= "projectProjectPage.html">Projects</a></li>
+            <li><a href = "projectHome.html">Commit</a></li>
             <li><a href = "#">Profile</a></li>
             <li><a href = "#">Search</a></li>
         </ul>
@@ -50,26 +50,66 @@ GroupProject:Project Tracking Software
             </br>
                 <form>
                     <fieldset> 
-                        <br>
-                            <label>*First Name: </label>
-                                <input type="text" name="text_box" autofocus required><br><br>
-                            <label>*Last Name: </label>
-                                <input type="text" name="text_box" required><br><br>
-                            <label>*E-mail: </label>
-                                <input type="email" name="email_box" required><br><br>                          
+                        <h3> Welcome Fisrtname Lastname</h3>                        
+                            
+                        
                             <label>*Hours Worked: </label>
                                 <input type="number" name="numerical_selector_box" min="1" max="100" required><br><br>
-                            <label>Project Description: </label>
-                                <textarea rows="4" cols="80" name="comment" form="usrform"></textarea><br> 
                             <label>*Project Revisions: </label>
-                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br> 
-                            <label>Problems Detected: </label>
-                                <textarea rows="4" cols="80" name="comment" form="usrform"></textarea><br>
-                            <h6>*Required Fields</h6><br> 
-                        <div class = "buttonSpace">
-                            <button type="button" class="btn btn-primary">Submit</button>
-                            <button type="button" class="btn btn-success">Upload</button>
-                        </div><br><br>
+                                <textarea rows="2" cols="50" name="comment" form="usrform" required></textarea><br> 
+                            <label>Detected Problem: </label>
+                                <textarea rows="2" cols="50" name="comment" form="usrform"></textarea><br>
+                                
+                                <div id = "requirmentWrapper">            
+                          <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#loadRequirments" aria-expanded="false" aria-controls="collapseExample">
+                                Completed Requirements
+                             </a>
+                        <div class="collapse" id="loadRequirments">
+                          <div class="well" id = "requirmentsBackground">
+                            <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 1
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 2
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 3
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 4
+                                </a>
+                                
+                          </div>
+                        </div>            
+                    </div>    
+                    <div class = "bugsWrapper">
+                                <a class="btn btn-warning btn-block" role="button" data-toggle="collapse" href="#loadProblems" aria-expanded="false" aria-controls="collapseExample">
+                                  Fixed Problems
+                                </a>
+                        <div class="collapse" id="loadProblems">
+                          <div class="well" id="bugsBackground">
+                            <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                *Bug 1
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                *Bug 2
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                *Bug 3
+                                </a>
+                          </div>
+                        </div> 
+                    </div>
+                    
+                        <h6>*Required Fields</h6><br> 
+                        
+                            <button type="button" class="btn btn-primary">Commit</button>
+                            <button type="button" class="btn btn-success">Upload File</button>
+                        
+                            
+
+                                
+                        <br><br>
                     </fieldset>
                 </form>
             
