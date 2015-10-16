@@ -1,0 +1,356 @@
+/*
+Jonathan Schrader ********* 7/23/2015
+ProjectSix:atlantic***** CIS 4004
+*/
+
+body {
+    background: -webkit-linear-gradient(#FFFFFF, #DCE4F5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FFFFFF, #DCE4F5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FFFFFF, #DCE4F5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FFFFFF, #DCE4F5);
+    background-repeat: no-repeat;
+    color: #666666;
+    background-color: #DCE4F5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1em;
+    
+}
+
+header {
+   background-image: url("images/sunset.jpg");
+   background-position: right;
+   background-repeat: no-repeat;
+   background-color: #5C8AE6;
+   color: #FFFFFF;
+   height: 60px;
+   padding-top: 13px;
+    
+
+}
+
+header h1 {
+margin: 0;
+padding-left:18px;
+}
+
+h4{
+   padding-left: 20px; 
+}
+
+#donutchart {
+    width: 700px;
+    height: 400px;
+}
+
+#header{
+    margin-top: 10px;
+    word-spacing: 120px;
+    padding: 3px;
+    padding-left: 10px;
+    border-style: solid;  
+} 
+
+.buttonSpace{
+    padding-left: 20px;
+}
+
+.commits :hover{
+    background-color: #EBEBEB;
+    text-decoration: none;
+}
+
+.commits{
+    border-style: solid; 
+    border-top: none;
+    word-spacing: 120px;
+    padding: 3px;
+    padding-left: 10px; 
+}
+
+.description{
+    border: solid;
+    border-top: none;
+    margin-top: -10px;
+}
+
+.progress-bar{
+    width:70%;
+}
+
+.progress{
+    width: 80%;
+    margin-left: 8em;
+    border: 1px solid;
+}
+
+
+#donutchart {
+    width: 50%;
+    background-color: #F5F5F5; 
+    height: 400px;
+    float:left;
+
+}
+
+#chart_div{
+    width:50%;
+    height: 400px;
+    background-color: #F5F5F5;
+    float:left; 
+}
+
+.description-footer{
+    text-align:center;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Rolman", serif;  
+    padding: 10px;
+    padding-top: 30px;
+}
+
+#wrapper{
+    margin:auto;
+    width: 80%;
+    background: -webkit-linear-gradient(#5C8AE6, #DCE4F5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5C8AE6, #DCE4F5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5C8AE6, #DCE4F5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5C8AE6, #DCE4F5);
+    min-width: 960px;
+    max-width: 2048px;
+
+    border: solid;
+}
+
+nav {   
+    font-weight: bold;
+    padding: 20px;
+    float: left;
+    width: 160px;
+
+}
+
+main {
+    background-color: #FFFFFF;
+    margin-left: 190px;    
+    padding: 1px 20px 20px 30px;
+    
+}
+
+nav a {
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 0;
+    font-family: Georgia, "Times New Rolman", serif; 
+}
+
+h2 {
+    color: #3399CC;
+    font-family: Georgia, "Times New Rolman", serif; 
+    text-shadow: 1px 1px #CCCCCC;
+}
+
+main h2 {
+    color: #3399CC;
+    font-family: Georgia, "Times New Rolman", serif; 
+    text-shadow: 1px 1px #CCCCCC;
+}
+
+h3 {
+   color: #000033;
+   font-family: Georgia, "Times New Rolman", serif;  
+}
+
+main ul {
+   list-style-image: url('images/marker.gif'); 
+}
+
+nav ul{
+   font-size: 1.2em;
+   margin: 0;
+   padding-left: 0;
+   list-style-type: none;
+}
+
+nav :link {
+   color: #F8F8F8;
+}
+
+
+nav :hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+table {
+    position: relative;
+    left: 45px;
+    border-collapse: collapse;
+}
+
+table, th, td{
+    border: 2px solid #3399CC; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F5FFFF;
+}
+
+tbody th:nth-child(2) {
+    text-align: left;
+    padding: 5px;
+}
+
+tbody tr:nth-child(1) th:nth-child(2){
+    text-align: center;
+}
+
+tbody tr:nth-child(1){
+    text-align: center;
+    color: white;
+    background-color: #00297A;
+}
+
+dt{
+    color: #000033; 
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+dd {
+    padding-bottom: 10px;
+}
+
+h6{
+padding-left: 14em;
+}
+
+fieldset {
+    padding-left: 10px;
+    border: 1px solid #90C7E3; 
+    box-shadow: 3px 3px 2px #AAAAAA;
+}
+label {
+    float: left;
+    width: 120px;
+    text-align: right;
+}
+
+input {
+    margin-left: 3em;   
+}
+
+textarea {
+    margin-left: 3em;
+}
+
+.button {
+    background-color: #90C7E3;
+}
+
+footer {
+    font-size: 75%;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Rolman", serif;  
+    padding: 20px;
+    padding-bottom: 0px;
+    background-color: #FFFFFF;
+}
+
+
+
+@media only screen and (max-width: 64em) {
+    body { 
+        margin:0;
+        background-color: #FFFFFF;
+    }
+    #wrapper {
+        min-width: 0;
+        margin: auto;
+        box-shadow: none;
+    }
+    main {
+        margin-left: 0;
+    }
+    nav {
+        float: none;
+        margin: auto;
+        text-align: center;
+        padding: 0.5em;
+    }   
+    nav li {
+        display: inline;
+        padding: 0.25em 0.75em 0.25em 0.75em; 
+    }
+    #main-image {
+        margin-left: 0;
+        height: 200px;
+    }
+    #activities-image {
+        margin-left: 0;
+        height: 200px;
+    }
+    #accommodations-image {
+        margin-left: 0;
+        height: 200px;
+    }
+
+   .not-active {
+   pointer-events: auto;
+   cursor: pointer;
+   text-decoration: underline;
+   color: blue; 
+   }
+}
+
+@media only screen and (max-width: 37.5em) {
+    
+    
+    header {
+        padding-top: 1em;
+    }
+    main {
+        padding: 0.1em 1em 0.1em 1em;
+        font-size: 90%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    nav{
+        width:100%;
+        padding: 0;
+    }
+    nav ul li{
+        display:block;
+        margin: 0;
+        border-bottom: 2px #330000 solid;
+    }
+    nav li a{
+        display: block;
+    }
+    #main-image {
+        background-image: none;
+        height: 0px;
+    }
+    #activities-image {
+        background-image: none;
+        height: 0px;
+    }
+    #accommodations-image {
+        background-image: none;
+        height: 0px;
+    }
+    table {
+        display: none;
+    }
+    
+}
+
+
+
+
+
+
+
