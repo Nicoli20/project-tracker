@@ -27,16 +27,16 @@ GroupProject:Project Tracking Software
     <div id = "wrapper">
     <!-- Header wireframe section -->
     <header>
-        <h1>TRACK'IT</h1>
+        <h1><a href = "projectFrontPage.html">TRACK'IT</a></h1>
     </header>
 
     <!-- Navigation wireframe section-->
     <nav>
         <ul>
-            <li><a href= "#">Projects</a></li>
-            <li><a href = "#">Commit</a></li>
-            <li><a href = "#">Profile</a></li>
-            <li><a href = "#">Search</a></li>
+            <li><a href= "projectProjectPage.html">Projects</a></li>
+            <li><a href= "projectHome.html">Home</a></li>
+            <li><a href = "commitForm.html">Commit</a></li>
+            <li><a href = "profilePage.html">Profile</a></li>
         </ul>
     </nav>
 
@@ -48,10 +48,10 @@ GroupProject:Project Tracking Software
         <h2>Project Form</h2>
             <h4>Fill out the required fields and press submit to create project.</h4>
             </br>
-                <form>
+                <form class = "projectCrit">
                     <fieldset> 
                         <br>
-                            <label>Project Title: </label>
+                            <label >Project Title: </label>
                                 <input type="text" name="text_box" autofocus required><br><br>
                             <label>Estimated Completion Date: </label>
                                 <input type="date" name="date_box" requirment><br><br>                         
@@ -59,11 +59,54 @@ GroupProject:Project Tracking Software
                                 <input type="number" name="numerical_selector_box" min="1" max="1000" required><br><br>
                             <label>Project Description: </label>
                                 <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
-                            <label>Project Requirments/Deliverables: </label>
-                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
-                            <label>Team Members: </label>
-                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
-                            <h6>*Required Fields</h6><br>
+                            <div class = "deliverablesWrapper"> 
+                            <a class="btn btn-danger btn-block" role="button" data-toggle="collapse" href="#loadRequirments" aria-expanded="false" aria-controls="collapseExample">
+                                Add Project Deliverables
+                            </a>    
+                                <div class="collapse" id="loadRequirments">
+                                    <div class="well">
+                                    <div class="col-sm-4">
+                                    <label>Deliverable: </label>
+                                        <input type="text" name="text_box">
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <label>Description: </label>    
+                                        <input type="text" name="text_box">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <br>
+                                        <a class="btn btn-danger" role="button">
+                                            Add <span class="glyphicon glyphicon-plus"></span>
+                                        </a>
+                                    </div>
+                                    <br><br><br><br><br>
+                                    </div>
+                                </div>
+                            </div>        
+                            <div class = "membersWrapper">
+                                <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#loadRequirments2" aria-expanded="false" aria-controls="collapseExample">
+                                    Add Project Team
+                                </a>
+                            <div class="collapse" id="loadRequirments2">
+                                <div class="well">
+                                    <div class="col-sm-4">
+                                    <label>Member: </label>
+                                        <input type="text" name="text_box">
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <label>Role: </label>    
+                                        <input type="text" name="text_box">
+                                    </div>
+                                    <div class="col-sm-4">
+                                    <br>
+                                        <a class="btn btn-success" role="button">
+                                            Add <span class="glyphicon glyphicon-plus"></span>
+                                        </a>
+                                    </div>
+                                    <br><br><br><br>
+                                </div>
+                            </div>
+                        </div>
                             <div class = "buttonSpace"><button type="button" class="btn btn-primary">Submit</button></div><br><br>
                             <div class="row">
  

@@ -1,0 +1,149 @@
+<!--
+Group 7: Andrew Kordecki
+         Jonathan Schrader
+         Michael Reyes
+         Nicoli William
+  
+GroupProject:Project Tracking Software  
+9/8/2015
+-->
+
+<!DOCTYPE html> <!-- Beginning of the page-->
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" />
+    <!-- STATUS BAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+     <!-- JAVA SCRIPT -->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawBasic);
+      
+      function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Weeks', 'Hours Committed Per Week',],
+        ['Week 1', 21],
+        ['Week 2', 33],
+        ['Week 3', 11],
+        ['Week 4', 25],
+      ]);
+
+      var options = {
+        title: 'Hours Committed Per Week',
+        chartArea: {width: '60%'},
+        hAxis: {
+          title: 'Total Hours',
+          minValue: 0
+        },     
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+    
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+
+<body>
+    <div id = "wrapper">
+    <!-- Header wireframe section -->
+    <header>
+        <h1><a href = "projectFrontPage.html">TRACK'IT</a></h1>
+    </header>
+
+    <!-- Navigation wireframe section-->
+    <nav>
+        <ul>
+            <li><a href= "projectProjectPage.html">Projects</a></li>
+            <li><a href= "projectHome.html">Home</a></li>
+            <li><a href = "commitForm.html">Commit</a></li>
+            <li><a href = "profilePage.html">Profile</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <!-- Main body wireframe section -->
+        <main>  
+        <div class = "content">
+            <div class = "infoContainer"><br>
+                <div class="col-sm-8"><h3>FirstName LastName</h3>
+                <br>
+                <h4>About Me: </h4> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros. 
+                Nulla pretium orci a ex suscipit,
+                eu condimentum turpis commodo. Integer libero dui, volutpat quis ligula sed, 
+                pulvinar auctor elit. Quisque eu bibendum tellus. Integer suscipit quam vitae nibh placerat</p>
+                <h5><strong>User Code:</strong> (123-4567)</h5>
+                </div>
+                <div class="col-sm-4"><img class="img-circle" src="images/blank-profile.jpg"><br><br>
+                <div class="btn-group" id = "centerButton">
+                  <button type="button" class="btn btn-primary">Edit Info</button>
+                  <button type="button" class="btn btn-primary">Edit Photo</button>
+                </div>
+                </div>
+                 <br>
+                
+                <div class="col-sm-12"></div>
+                
+                <div class="col-sm-6"><h4>Current Project Rolls: </h4>
+                <div class = "projects">                  
+                    <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                        Project1 - Front End Editor
+                    </a> 
+                   </div> 
+                   
+                <div class = "projects">              
+                    <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                      Project2 - Design
+                    </a>  
+                </div>
+                
+                <div class = "projects">              
+                    <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+                      Project3 - Databases
+                    </a>  
+                </div>
+                </div>
+                <div class="col-sm-6"><h4>Current Projects: </h4>
+                <div class = "projects">                  
+                    <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                        Project1 - Last Edited: 12:16AM 9/10/2015
+                    </a> 
+                   </div> 
+                   
+                <div class = "projects">              
+                    <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                      Project2 - Last Edited: 12:10AM 9/10/2015
+                    </a>  
+                </div>
+                
+                <div class = "projects">              
+                    <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+                      Project3 - Last Edited: 1:10PM 9/10/2015
+                    </a>  
+                </div>
+                </div>
+                
+                <div class="col-sm-12"><div id="chart_div"></div></div>
+            </div>
+        </div>
+
+        <!-- Footer wireframe section -->
+        <footer>
+            Copyright &copy; 2015 Project 7 Productions 
+        </footer>
+
+        </main> <!-- End main wireframe -->
+    </div>  <!-- End wrapper wireframe -->    
+</body> <!-- End body wireframe -->
+</html> <!-- End accomodations page -->

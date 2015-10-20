@@ -1,6 +1,5 @@
 /*
 Jonathan Schrader ********* 7/23/2015
-ProjectSix:atlantic***** CIS 4004
 */
 
 body {
@@ -17,7 +16,6 @@ body {
 }
 
 header {
-   background-image: url("images/sunset.jpg");
    background-position: right;
    background-repeat: no-repeat;
    background-color: #5C8AE6;
@@ -43,34 +41,159 @@ h4{
 }
 
 #header{
-    margin-top: 10px;
-    word-spacing: 120px;
     padding: 3px;
     padding-left: 10px;
-    border-style: solid;  
+    border: solid;
+    background-image: url(images/btexture4.jpg);
+    
 } 
+
+#header .btn-group{
+    position: right;
+    
+}
+
+.infoContainer{
+    min-height: 50em;
+}
 
 .buttonSpace{
     padding-left: 20px;
 }
 
-.commits :hover{
-    background-color: #EBEBEB;
-    text-decoration: none;
+.space{
+    padding-top: 20px;
+}
+
+
+.right{
+    position: absolute;
+    right: 70px;
+    width: 300px;
+}
+
+.right2{
+    position: absolute;
+    right: 80px;
+    width: 300px;
 }
 
 .commits{
     border-style: solid; 
     border-top: none;
-    word-spacing: 120px;
     padding: 3px;
     padding-left: 10px; 
 }
 
+.commits:nth-child(3) {
+    background-image: url(images/gtexture4.png);
+}
+
+.commits:nth-child(4) {
+    background-image: url(images/ytexture.jpg);
+}
+
+.commits:nth-child(5) {
+    background-image: url(images/rtexture.jpg);
+}
+
+.border{
+    border-style: solid;
+    border-width: 5px;
+}
+    
+.jumbotron {
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+    background-image: url(images/header.jpg);
+    border-style: solid;
+    border: 0px;
+    margin-bottom: 0px;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.jumbotron h1{
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+}
+
+.projects{
+    border-style: solid;
+    padding: 3px;
+    padding-left: 10px; 
+}
+
+.well{
+    border: none;
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.buttonWrapper{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-image: url(images/btexture4.jpg);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.requirmentWrapper{
+    padding: 5px;
+    background-image: url(images/header.jpg);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.deliverablesWrapper{
+    padding: 5px;
+    background-image: url(images/rtexture.jpg);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.membersWrapper{
+    padding: 5px;
+    background-image: url(images/gtexture3.png);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.bugsWrapper{
+    padding: 5px;
+    background-image: url(images/ytexture.jpg);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.userWrapper{
+    border: solid #5C8AE6;
+    padding-top: 10px;
+    padding-left: 15px;
+    background-image: url(images/blendtexture2.jpg);
+    color: white;
+}
+
+.image{
+    background-image: url(images/ytexture.jpg);
+    padding: 5px;
+}
+
 .description{
     border: solid;
-    border-top: none;
-    margin-top: -10px;
+    border-bottom: none;
+    margin-top:20px;
+    min-height: 50em;
+}
+
+.description h2{
+  padding-left: 10px;
 }
 
 .progress-bar{
@@ -83,6 +206,12 @@ h4{
     border: 1px solid;
 }
 
+.chart #chart_div{
+    width: 50%;
+    background-color: #F5F5F5; 
+    height: 400px;
+    float:left; 
+}
 
 #donutchart {
     width: 50%;
@@ -93,10 +222,24 @@ h4{
 }
 
 #chart_div{
-    width:50%;
+    width:%100;
     height: 400px;
     background-color: #F5F5F5;
-    float:left; 
+}
+
+#centerButton{
+padding-left: 15px;
+}
+
+.indent{
+padding-left: 40px;
+}
+
+.img-circle {
+    border: solid;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
 }
 
 .description-footer{
@@ -117,7 +260,7 @@ h4{
     background: linear-gradient(#5C8AE6, #DCE4F5);
     min-width: 960px;
     max-width: 2048px;
-
+    
     border: solid;
 }
 
@@ -126,6 +269,7 @@ nav {
     padding: 20px;
     float: left;
     width: 160px;
+    
 
 }
 
@@ -145,6 +289,19 @@ h1 {
     font-family: Georgia, "Times New Rolman", serif; 
 }
 
+h1 a{
+    text-decoration: none;
+    color: white;
+}
+h1 a:hover {
+    text-decoration: none;
+    color: white;
+}
+h1 a:clicked {
+    text-decoration: none;
+    color: white;
+}
+
 h2 {
     color: #3399CC;
     font-family: Georgia, "Times New Rolman", serif; 
@@ -158,13 +315,12 @@ main h2 {
 }
 
 h3 {
-   color: #000033;
-   font-family: Georgia, "Times New Rolman", serif;  
+    color: #FFCC00;
+    font-family: Georgia, "Times New Rolman", serif; 
+    text-shadow: 1px 1px #CCCCCC; 
 }
 
-main ul {
-   list-style-image: url('images/marker.gif'); 
-}
+
 
 nav ul{
    font-size: 1.2em;
@@ -173,7 +329,7 @@ nav ul{
    list-style-type: none;
 }
 
-nav :link {
+nav a {
    color: #F8F8F8;
 }
 
@@ -181,6 +337,10 @@ nav :link {
 nav :hover {
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.staffContainer{
+    min-height: 220px;
 }
 
 table {
@@ -227,7 +387,6 @@ padding-left: 14em;
 }
 
 fieldset {
-    padding-left: 10px;
     border: 1px solid #90C7E3; 
     box-shadow: 3px 3px 2px #AAAAAA;
 }
@@ -237,11 +396,18 @@ label {
     text-align: right;
 }
 
+.projectCrit{
+    background-image: url(images/blendtexture.jpg);
+    color: #F8F8F8
+    }
+    
 input {
+    color: grey;
     margin-left: 3em;   
 }
 
 textarea {
+    color: grey;
     margin-left: 3em;
 }
 
@@ -283,18 +449,6 @@ footer {
     nav li {
         display: inline;
         padding: 0.25em 0.75em 0.25em 0.75em; 
-    }
-    #main-image {
-        margin-left: 0;
-        height: 200px;
-    }
-    #activities-image {
-        margin-left: 0;
-        height: 200px;
-    }
-    #accommodations-image {
-        margin-left: 0;
-        height: 200px;
     }
 
    .not-active {

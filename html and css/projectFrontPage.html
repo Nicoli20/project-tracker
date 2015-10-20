@@ -30,15 +30,10 @@ GroupProject:Project Tracking Software
 
 <body>
     <div id = "wrapper">
-    <!-- Header wireframe section -->
-    <header>
-        <h1>TRACK'IT</h1>
-    </header>
 
     
     <!-- Main body wireframe section -->
-        <main>  
-        <div class = "content">
+       
             <div class = "image">
                 <div class = "front">
                     <div class="jumbotron">
@@ -46,12 +41,15 @@ GroupProject:Project Tracking Software
                         <p>a project tracking software</p>
                             <form>
                                 <fieldset>
-                                    Username:<textarea rows="1" cols="20" name="comment" form="usrform" required></textarea><br>
-                                    Password:<textarea rows="1" cols="20" name="comment" form="usrform" required></textarea><br>
-                                    <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                    Username:
+                                        <input type="text" name="username" required><br><br>
+                                    Password : 
+                                        <input type="password" name="psw" required><br>
+                                    <br>
+                                    <a class="btn btn-default" role="button" href="projectProjectPage.html">
                                     Login
                                      </a>
-                                    <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                    <a class="btn btn-default" role="button" href="createAccount.html">
                                     Create Account
                                     </a>
                                 </fieldset>
@@ -59,22 +57,53 @@ GroupProject:Project Tracking Software
                     </div>
                 </div>
             </div>
-        
+        <main>  
+        <div class = "content">
+        <br><br>
+            <div class = "staffContainer">
+            <div class="col-sm-3"><img class="img-circle" src="images/btexture4.jpg"></div>
+            <div class="col-sm-6"><h3>Keep Track</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>           
+            </div><div class="col-sm-3"></div>
+          
+            </div>
+            <div class = "staffContainer">
+            
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6"><h3>Submit Work</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-3"><img class="img-circle" src="images/gtexture.png"></div>
+            </div>
+            <div class = "staffContainer">
+            <div class="col-sm-3"><img class="img-circle" src="images/header2.jpg"></div>
+            <div class="col-sm-6"><h3>Easy and Simple</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div><div class="col-sm-3"></div>
+           
+            </div>
+        <br><br><br>    
+            
         <div class="row">
         <div class="col-sm-4">
-          <h3>Column 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          <h3>Project Satus</h3>
+          <p>Look over all requirments and completion percentage of project.</p>
+          <p>Lookover and download team member's commits.</p>
         </div>
         <div class="col-sm-4">
-          <h3>Column 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          <h3>User Profile</h3>
+          <p>Edit and look over your profile to see your recent projects, and project roles.</p>
+          <p>Look over your teammates profiles and project manager as well.</p>
         </div>
         <div class="col-sm-4">
-          <h3>Column 3</h3>        
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          <h3>Manage Projects</h3>        
+          <p>Users who create projects opt as the project manage. </p>
+          <p>Role allows them to add team members, oversee all commits and 
+          data, as well as manage time spent on the project that week
+          </p>
         </div>
       </div>
       </div>
@@ -82,7 +111,7 @@ GroupProject:Project Tracking Software
 
         <!-- Footer wireframe section -->
         <footer>
-        <a>about us</a> * <a>contact us</a><br>
+        <a href = "aboutUs.html">about us</a> * <a href = "contactUs.html">contact us</a><br>
             Copyright &copy; 2015 Project 7 Productions 
         </footer>
 

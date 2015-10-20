@@ -88,16 +88,16 @@ GroupProject:Project Tracking Software
     <div id = "wrapper">
     <!-- Header wireframe section -->
     <header>
-        <h1>TRACK'IT</h1>
+        <h1><a href = "projectFrontPage.html">TRACK'IT</a></h1>
     </header>
 
     <!-- Navigation wireframe section-->
     <nav>
         <ul>
-            <li><a href= "#">Projects</a></li>
-            <li><a href = "#">Commit</a></li>
-            <li><a href = "#">Profile</a></li>
-            <li><a href = "#">Search</a></li>
+            <li><a href= "projectProjectPage.html">Projects</a></li>
+            <li><a href= "projectHome.html">Home</a></li>
+            <li><a href = "commitForm.html">Commit</a></li>
+            <li><a href = "profilePage.html">Profile</a></li>
         </ul>
     </nav>
 
@@ -106,73 +106,133 @@ GroupProject:Project Tracking Software
     <!-- Main body wireframe section -->
         <main>  
         <div class = "content">
-            <div id = "header">
-                <b><a>PROJECT</a> <a>COMMIT</a> <a>TIME</a> <a>DATE</a></b>
+            
+         <div class = "description">    
+            <h2>Project Title</h2>    
+            <h4><br>Status of Project</h4>
+                    <div class="progress">
+                        <div class = "progressBar">
+                           <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="900">
+                               70% Completed  
+                           </div>
+                        </div>   
+                    </div>
+                    <h4>Project Description:</h4><div class = "contentInfo"></div>
+                    <h4>Estimated Completion:</h4><div class = "contentInfo"></div>
+                    <h4>Project Deliverables:</h4><div class = "contentInfo"></div>
+                    
+                    
+                <div class = "bugsWrapper">    
+                    <a class="btn btn-warning btn-block" role="button" data-toggle="collapse" href="#loadProblems" aria-expanded="false" aria-controls="collapseExample">
+                        View Current Issues
+                    </a>
+                        <div class="collapse" id="loadProblems">
+                          <div class="well">       
+                            <a class="btn btn-default" role="button">
+                                *Bug 1 <span class="glyphicon glyphicon-heart"></span>
+                                </a>
+                                <a class="btn btn-default" role="button">
+                                *Bug 2 <span class="glyphicon glyphicon-heart"></span>
+                                </a>
+                                <a class="btn btn-default" role="button">
+                                *Bug 3 <span class="glyphicon glyphicon-heart"></span>
+                                </a>
+                          </div>
+                        </div> 
+                </div>
+                        <div class="description-footer">ProjectName: Info</div>
+
+            <div class = "chart">
+                <div id="donutchart"></div>
+                <div id="chart_div"></div>
             </div>
-            <div class = "commits">
-                <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                </button>  
-                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Project1 Commit1 12:07AM 9/10/2015
+            <div class="description-footer">ProjectName: Info</div>
+            </div>
+            
+            <div id = "header">
+              <div class="col-sm-9">
+                <h4 style = "color: white">Commits</h4>
+              </div>
+              <div class="col-sm-3">  
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary">Sort by...</button>
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Recent Date</a></li>
+                            <li><a href="#">Team Member</a></li>
+                          </ul>
+                        </div>
+                        
+              </div>
+              <br><br>
+            </div>
+            <div class = "commits"> 
+                    <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Commit1 12:07AM 9/10/2015
                 </a>
                     <div class="collapse" id="collapseExample">
                       <div class="well">
-                        ...
+                            <h4>Commited By:</h4><div class = "contentInfo"></div>
+                            <h4>Project Revision:</h4><div class = "contentInfo"></div>
+                            <h4>Problems Detected:</h4><div class = "contentInfo"></div>
+                            
+                         
+                        
+                        <div class = "buttonSpace">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-warning">Comment</button>
+                        </div>
+                        
+                        <div class="description-footer">ProjectName: Commit1</div>
                       </div>
                     </div>        
                
             </div>
-            <div class = "commits">  
-                <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                </button>            
-                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                  Project1 Commit2 12:10AM 9/10/2015
+            <div class = "commits">             
+                <a class="btn btn-warning btn-block" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                  Commit2 12:10AM 9/10/2015
                 </a>
                     <div class="collapse" id="collapseExample2">
                       <div class="well">
-                        ...
+                        <h4>Commited By:</h4><div class = "contentInfo"></div>
+                        <h4>Project Revision:</h4><div class = "contentInfo"></div>
+                        <h4>Problems Detected:</h4><div class = "contentInfo"></div>
+                        
+                     
+                    
+                        <div class = "buttonSpace">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-warning">Comment</button>
+                        </div>
+                        
+                        <div class="description-footer">ProjectName: Commit2</div>
                       </div>
                     </div>    
             </div>
-                        <div class = "commits">  
-                <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                </button>            
-                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                  Project1 Commit3 12:16AM 9/10/2015
+            
+            <div class = "commits">            
+                <a class="btn btn-danger btn-block" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                  Commit3 12:16AM 9/10/2015
                 </a>
                     <div class="collapse" id="collapseExample3">
                       <div class="well">
-                        ...
+                        <h4>Commited By:</h4><div class = "contentInfo"></div>
+                        <h4>Project Revision:</h4><div class = "contentInfo"></div>
+                        <h4>Problems Detected:</h4><div class = "contentInfo"></div>
+                        
+                     
+                    
+                        <div class = "buttonSpace">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-warning">Comment</button>
+                        </div>
+                        
+                    <div class="description-footer">ProjectName: Commit3</div>
                       </div>
                     </div>    
-            </div>
-            <div class = "description">
-                <div class = "progressBar">
-                    <h4><br>Status of Project</h4>
-                    <div class="progress">
-                           <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="900">
-                               70% Completed  
-                           </div>
-                    </div>
-                </div>
-                <h4>Project Description:</h4><div class = "contentInfo"></div>
-                <h4>Project Revision:</h4><div class = "contentInfo"></div>
-                <h4>Problems Detected:</h4><div class = "contentInfo"></div>
-                <h4>Estimated Completion:</h4><div class = "contentInfo"></div>
-                
-            <div id="donutchart"></div> 
-            <div id="chart_div"></div>
-            <div class = "buttonSpace">
-                <button type="button" class="btn btn-primary">Edit</button>
-                <button type="button" class="btn btn-warning">Comment</button>
-            </div>
-            
-            <div class="description-footer">Project1: Commit3</div>
-            
-            </div>
+            </div> 
         </div>
 
         <!-- Footer wireframe section -->

@@ -1,0 +1,19 @@
+(Cars, Trucks, Bikes, SUVs)
+Users: Dealers, Buyers
+Buyer - (inquire about list of avaiable vehicles from buyer)
+Buyer - (obtaining info for:)
+	Make
+	Model
+	Year
+	Price
+	Color
+	Accumulated miles
+Buyer - (Budget range - buys vehicle in range)
+Dealer - (owns (List of vehicles)
+Dealer - (on Buyer request(provieds vehicle information)
+Dealer - (list of previous buyers[who bought from him])
+Buyer - (Perchase vehicle (full amount)
+	elegible for discount based on credit rating)
+Buyer -  (Purachase vehicle (Instalment basis (EMI) 
+	interest rate depeneds on time of payment and buyer's credit rating)
+Buyer - (Lease vehicle)[same process as buying process]
