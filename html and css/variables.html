@@ -1,0 +1,88 @@
+<!--
+Group 7: Andrew Kordecki
+         Jonathan Schrader
+         Michael Reyes
+         Nicoli William
+  
+GroupProject:Project Tracking Software  
+10/27/2015
+-->
+//version 1.0
+
+//these are some of the variable that we will need to 
+//generate for our project. Please add any needed variable
+
+int numUsers [];
+struct users{
+    String userName;
+    String password;
+    int userID;
+    struct profile;
+    struct projects;
+}
+
+struct Project{
+    int teamNum; //number of team members
+    String memberName [teamNum];
+    String memberRole [teamNum];
+    
+    String projectName;
+    int ProjectStatus = 0;
+    String projectDescription;
+    String estCompletion;
+    String projectDeliverables [];
+    int numDeliverables;
+    int hoursGoal;
+    
+    projectInc = 100/numDeliverables;
+    
+    int numIssues;
+    String issue [numIssues];
+    String issueDescription [numIssues];
+    String deliverable [numDeliverables]; 
+    String deliverableDescription [numDeliverables];
+    
+    
+    //chart section 1. pie, 
+    int teamHours [teamNum]; 
+    int slicePercent [teamNum] = hoursGoal/teamHours[teamNum];
+    int incompleteHours = 100 - (all) slicePercent;   
+    
+    //2. bar
+    int weeklyHours[1000];
+    
+    int numCommits [];
+    struct commit [];
+}
+
+struct commit{
+    int commitNum;
+    int time;
+    int date;
+    
+    String teamMem = memberName;
+    String revision;
+    String problemsDetected [];  
+}
+
+struct profile{
+    String firstName;
+    String lastName;
+    int userID;
+    String about;
+    
+    img profilePic;
+    
+    String currentProjects [3];
+    String currentRoles [3];
+    
+    int weeklyPersonalHours [];
+    
+    int numProjects; //number of all personal projects worked on
+}
+
+
+String currentProjects[struct Project.projectName];
+String completedProjects[struct Project.projectName];
+String comments [numProjects] = {empty};
+
