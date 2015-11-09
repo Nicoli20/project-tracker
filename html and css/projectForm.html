@@ -18,11 +18,14 @@ GroupProject:Project Tracking Software
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
+    
+    <!-- This part of the Site deals with creating a project. To create a project, the user must
+         fill in the necessary fields as well as adding in project deliverables and team members-->
     <title>Project Form</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" /><!--CSS drawn from  style 1-->
 </head>
 
-
+<!--Main Body Section-->
 <body>
     <div id = "wrapper">
     <!-- Header wireframe section -->
@@ -39,86 +42,88 @@ GroupProject:Project Tracking Software
             <li><a href = "profilePage.html">Profile</a></li>
         </ul>
     </nav>
-
-
     
     <!-- Main body wireframe section -->
         <main>  
-        <div class = "content">
-        <h2>Project Form</h2>
-            <h4>Fill out the required fields and press submit to create project.</h4>
-            </br>
-                <form class = "projectCrit">
-                    <fieldset> 
-                        <br>
-                            <label >Project Title: </label>
-                                <input type="text" name="text_box" autofocus required><br><br>
-                            <label>Estimated Completion Date: </label>
-                                <input type="date" name="date_box" requirment><br><br>                         
-                            <label>Estimated Hours to Complete: </label>
-                                <input type="number" name="numerical_selector_box" min="1" max="1000" required><br><br>
-                            <label>Project Description: </label>
-                                <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br>
-                            <div class = "deliverablesWrapper"> 
-                            <a class="btn btn-danger btn-block" role="button" data-toggle="collapse" href="#loadRequirments" aria-expanded="false" aria-controls="collapseExample">
-                                Add Project Deliverables
-                            </a>    
-                                <div class="collapse" id="loadRequirments">
-                                    <div class="well">
-                                    <div class="col-sm-4">
-                                    <label>Deliverable: </label>
-                                        <input type="text" name="text_box">
-                                    </div>
-                                    <div class="col-sm-4">
-                                    <label>Description: </label>    
-                                        <input type="text" name="text_box">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <br>
-                                        <a class="btn btn-danger" role="button">
-                                            Add <span class="glyphicon glyphicon-plus"></span>
-                                        </a>
-                                    </div>
-                                    <br><br><br><br><br>
+            <div class = "content">
+            <h2>Project Form</h2>
+                <h4>Fill out the required fields and press submit to create project.</h4>
+                </br>
+                    <form class = "projectCrit"><!-- Contains form format-->
+                        <fieldset> 
+                            <br>
+                                <label >Project Title: </label>
+                                    <input type="text" name="text_box" autofocus required><br><br><!--Saved to String: projectName-->
+                                <label>Estimated Completion Date: </label>
+                                    <input type="date" name="date_box" requirment><br><br><!--Saved to String: completionDate -->                         
+                                <label>Estimated Hours Till Completion: </label>
+                                    <input type="number" name="numerical_selector_box" min="1" max="100000" required><br><br><!--Saved to int: estimatedHours-->
+                                <label>Project Description: </label>
+                                    <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br><!--Saved to String: projectDescription -->
+                                
+                                <!--This section of the code is for adding prject deliverable to the project
+                                        The deliverables will link to int: projectStatus
+                                            projectStatus.chunk = 99/numDeliverables
+                                        Each String: deliverable [] & String: deliverableInfo [] will be ticketed to the project
+                                        -->
+                                <div class = "deliverablesWrapper"> 
+                                    <a class="btn btn-danger btn-block" role="button" data-toggle="collapse" href="#loadRequirments" aria-expanded="false" aria-controls="collapseExample">
+                                        Add Project Deliverables
+                                    </a>    
+                                        <div class="collapse" id="loadRequirments">
+                                            <div class="well">
+                                                <div class="col-sm-4">
+                                                    <label>Deliverable: </label>
+                                                        <input type="text" name="text_box">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label>Description: </label>    
+                                                        <input type="text" name="text_box">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <br>
+                                                    <a class="btn btn-danger" role="button">
+                                                        Add <span class="glyphicon glyphicon-plus"></span><!--Press this button to add deliverable to ticket queue -->
+                                                    </a>
+                                                </div>
+                                                <br><br><br><br><br>
+                                            </div>
+                                        </div>
+                                </div>        
+                                <div class = "membersWrapper">
+                                    <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#loadRequirments2" aria-expanded="false" aria-controls="collapseExample">
+                                        Add Project Team <!--This part is adding team members to the project. You will have to add them by email address-->
+                                    </a>
+                                    
+                                    <div class="collapse" id="loadRequirments2">
+                                        <div class="well">
+                                            <div class="col-sm-4">
+                                                <label>Member: </label>
+                                                    <input type="text" name="text_box">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>Role: </label>    
+                                                    <input type="text" name="text_box">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <br>
+                                                <a class="btn btn-success" role="button">
+                                                    Add <span class="glyphicon glyphicon-plus"></span>
+                                                </a>
+                                            </div>
+                                            <br><br><br><br>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>        
-                            <div class = "membersWrapper">
-                                <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#loadRequirments2" aria-expanded="false" aria-controls="collapseExample">
-                                    Add Project Team
-                                </a>
-                            <div class="collapse" id="loadRequirments2">
-                                <div class="well">
-                                    <div class="col-sm-4">
-                                    <label>Member: </label>
-                                        <input type="text" name="text_box">
-                                    </div>
-                                    <div class="col-sm-4">
-                                    <label>Role: </label>    
-                                        <input type="text" name="text_box">
-                                    </div>
-                                    <div class="col-sm-4">
-                                    <br>
-                                        <a class="btn btn-success" role="button">
-                                            Add <span class="glyphicon glyphicon-plus"></span>
-                                        </a>
-                                    </div>
-                                    <br><br><br><br>
-                                </div>
-                            </div>
-                        </div>
-                            <div class = "buttonSpace"><button type="button" class="btn btn-primary">Submit</button></div><br><br>
-                            <div class="row">
- 
-                            
-                    </fieldset>
-                </form>
-        </div>
+                                <div class = "buttonSpace"><button type="button" class="btn btn-primary">Submit</button></div><br><br>                                                      
+                        </fieldset>
+                    </form>
+            
 
-        <!-- Footer wireframe section -->
-        <footer>
-            Copyright &copy; 2015 Project 7 Productions 
-        </footer>
+            <!-- Footer wireframe section -->
+            <footer>
+                Copyright &copy; 2015 Project 7 Productions 
+            </footer>
 
         </main> <!-- End main wireframe -->
     </div>  <!-- End wrapper wireframe -->    

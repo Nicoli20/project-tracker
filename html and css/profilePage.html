@@ -49,7 +49,7 @@ GroupProject:Project Tracking Software
     }
     </script>
     
-    <title>Profile Page</title>
+    <title>Profile Page</title> <!--This is a page for the profiles of each user. It adds some more interactiveness and it helps navigation elements-->
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -77,26 +77,24 @@ GroupProject:Project Tracking Software
         <main>  
         <div class = "content">
             <div class = "infoContainer"><br>
-                <div class="col-sm-8"><h3>FirstName LastName</h3>
+                <div class="col-sm-8"><h3>FirstName LastName</h3> <!--Generate String: userName here -->
                 <br>
                 <h4>About Me: </h4> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros. 
                 Nulla pretium orci a ex suscipit,
                 eu condimentum turpis commodo. Integer libero dui, volutpat quis ligula sed, 
-                pulvinar auctor elit. Quisque eu bibendum tellus. Integer suscipit quam vitae nibh placerat</p>
-                <h5><strong>User Code:</strong> (123-4567)</h5>
+                pulvinar auctor elit. Quisque eu bibendum tellus. Integer suscipit quam vitae nibh placerat</p><!--Sring: userAbout -->
                 </div>
-                <div class="col-sm-4"><img class="img-circle" src="images/blank-profile.jpg"><br><br>
+                <div class="col-sm-4"><img class="img-circle" src="images/blank-profile.jpg"><br><br><!--User profile img-->
                 <div class="btn-group" id = "centerButton">
-                  <button type="button" class="btn btn-primary">Edit Info</button>
-                  <button type="button" class="btn btn-primary">Edit Photo</button>
+                    <button type="button" class="btn btn-primary">Edit Info</button><!--creates bubble to edit userAbout-->
+                    <button type="button" class="btn btn-primary">Edit Photo</button>
                 </div>
                 </div>
                  <br>
                 
                 <div class="col-sm-12"></div>
-                
-                <div class="col-sm-6"><h4>Current Project Rolls: </h4>
-                <div class = "projects">                  
+                <div class="col-sm-6"><h4>Current Project Rolls: </h4> 
+                <div class = "projects"> <!--up to 3 most current projectName and userRoles-->
                     <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
                         Project1 - Front End Editor
                     </a> 
@@ -114,7 +112,9 @@ GroupProject:Project Tracking Software
                     </a>  
                 </div>
                 </div>
-                <div class="col-sm-6"><h4>Current Projects: </h4>
+                
+                
+                <div class="col-sm-6"><h4>Current Projects: </h4><!--Up to 3 most recent projects and commitTimes -->
                 <div class = "projects">                  
                     <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
                         Project1 - Last Edited: 12:16AM 9/10/2015

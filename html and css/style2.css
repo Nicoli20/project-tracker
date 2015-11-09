@@ -48,126 +48,6 @@ h4{
    padding-left: 20px; 
 }
 
-#header{
-    margin-top: 10px;
-    word-spacing: 120px;
-    padding: 3px;
-    padding-left: 10px;
-    border-style: solid;  
-} 
-
-.buttonSpace{
-    padding-left: 20px;
-}
-
-.space{
-    padding-top: 20px;
-}
-.commits :hover{
-    background-color: #EBEBEB;
-    text-decoration: none;
-}
-
-.commits{
-    border-style: solid; 
-    border-top: none;
-    word-spacing: 120px;
-    padding: 3px;
-    padding-left: 10px; 
-}
-.image{
-background-image: url(images/ytexture.jpg);
-}
-
-.jumbotron{
-    width: 50%;
-    margin: 0 auto;
-    max-width: 600px;
-    text-align: center;
-    font-family: "Verdana", Times, serif;
-    background: rgb(200, 54, 54); /* This is for ie8 and below */
-    background: rgba(200, 54, 54, 0.5); 
-    }
-
-.front .jumbotron{
-    text-align: center;
-    font-family: "Verdana", Times, serif;
-    
-    }
-
-.row{
-    background-color: #5C8AE6;
-    color: #F8F8F8;
-    border-radius: 25px;
-    border-width: 2px;
-    border-color: grey;
-    border-style: solid;
-    
-}
-    
-.jumbotron {
-    margin-bottom: 0px;
-    
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    text-shadow: black 0.3em 0.3em 0.3em;
-}
-
-.jumbotron h1{
-    text-align: center;
-    font-family: "Verdana", Times, serif;
-}
-
-
-
-.projects{
-    border-style: solid;
-    text-align: center;
-    word-spacing: 40px;
-    padding: 3px;
-    padding-left: 10px; 
-}
-
-.description{
-    border: solid;
-    border-top: none;
-    margin-top: -10px;
-}
-
-.progress-bar{
-    width:70%;
-}
-
-.progress{
-    width: 80%;
-    margin-left: 8em;
-    border: 1px solid;
-}
-
-
-.description-footer{
-    text-align:center;
-    font-style: italic;
-    text-align: center;
-    font-family: Georgia, "Times New Rolman", serif;  
-    padding: 10px;
-    padding-top: 30px;
-}
-
-#wrapper{
-    margin:auto;
-    width: 80%;
-    background: -webkit-linear-gradient(#5C8AE6, #DCE4F5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#5C8AE6, #DCE4F5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#5C8AE6, #DCE4F5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#5C8AE6, #DCE4F5);
-    min-width: 960px;
-    max-width: 2048px;
-
-    border: solid;
-}
 
 nav {   
     font-weight: bold;
@@ -258,11 +138,6 @@ tbody tr:nth-child(1){
     background-color: #00297A;
 }
 
-.staffContainer{
-    min-height: 220px;
-}
-
-
 
 label {
     float: left;
@@ -279,6 +154,154 @@ textarea {
     margin-left: 3em;
 }
 
+footer {
+    font-size: 75%;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Rolman", serif;  
+    padding: 20px;
+    padding-bottom: 0px;
+    background-color: #FFFFFF;
+}
+
+#wrapper{
+    margin:auto;
+    width: 80%;
+    background: -webkit-linear-gradient(#5C8AE6, #DCE4F5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5C8AE6, #DCE4F5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5C8AE6, #DCE4F5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5C8AE6, #DCE4F5);
+    min-width: 960px;
+    max-width: 2048px;
+    border: solid;
+}
+
+
+#header{
+    margin-top: 10px;
+    word-spacing: 120px;
+    padding: 3px;
+    padding-left: 10px;
+    border-style: solid;  
+} 
+
+.userWrapper{
+    border: solid #5C8AE6;
+    padding-top: 10px;
+    padding-left: 15px;
+    background-image: url(images/blendtexture2.jpg);
+    color: white;
+}
+
+.indent{
+padding-left: 40px;
+}
+
+.staffContainer{
+    min-height: 220px;
+}
+
+.buttonSpace{
+    padding-left: 20px;
+}
+
+.space{
+    padding-top: 20px;
+}
+.commits :hover{
+    background-color: #EBEBEB;
+    text-decoration: none;
+}
+
+.commits{
+    border-style: solid; 
+    border-top: none;
+    word-spacing: 120px;
+    padding: 3px;
+    padding-left: 10px; 
+}
+.image{
+background-image: url(images/ytexture.jpg);
+}
+
+.jumbotron{
+    width: 50%;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+    background: rgb(200, 54, 54); /* This is for ie8 and below */
+    background: rgba(200, 54, 54, 0.5); 
+    }
+
+.front .jumbotron{
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+    
+    }
+
+.row{
+    background-color: #5C8AE6;
+    color: #F8F8F8;
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: grey;
+    border-style: solid;
+    
+}
+    
+.jumbotron {
+    margin-bottom: 0px;
+    
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.jumbotron h1{
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+}
+
+.projects{
+    border-style: solid;
+    text-align: center;
+    word-spacing: 40px;
+    padding: 3px;
+    padding-left: 10px; 
+}
+
+.description{
+    border: solid;
+    border-top: none;
+    margin-top: -10px;
+}
+
+.progress-bar{
+    width:70%;
+}
+
+.progress{
+    width: 80%;
+    margin-left: 8em;
+    border: 1px solid;
+}
+
+.description-footer{
+    text-align:center;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Rolman", serif;  
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.staffContainer{
+    min-height: 220px;
+}
+
 .img-circle {
     border: solid;
     height: 200px;
@@ -288,14 +311,4 @@ textarea {
 
 .button {
     background-color: #90C7E3;
-}
-
-footer {
-    font-size: 75%;
-    font-style: italic;
-    text-align: center;
-    font-family: Georgia, "Times New Rolman", serif;  
-    padding: 20px;
-    padding-bottom: 0px;
-    background-color: #FFFFFF;
 }

@@ -25,7 +25,12 @@ GroupProject:Project Tracking Software
       google.setOnLoadCallback(drawChart);
       google.setOnLoadCallback(drawBasic);
       
-
+      
+        $(".btn btn-default").click(function() {
+        // Instead of directly editing CSS, toggle a class
+        $(this).toggleClass("clicked");
+        });
+      
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
@@ -101,28 +106,79 @@ GroupProject:Project Tracking Software
         </ul>
     </nav>
 
-
+<!--*************************************************************************************************************************-->        
     
     <!-- Main body wireframe section -->
         <main>  
-        <div class = "content">
+        <div class = "content"> 
             
          <div class = "description">    
-            <h2>Project Title</h2>    
+            <h2>Project Title</h2>
+            <div class="col-sm-12">
             <h4><br>Status of Project</h4>
+            </div>
                     <div class="progress">
-                        <div class = "progressBar">
+                        <div class = "progressBar"><!--out status bar script link area-->
                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="900">
                                70% Completed  
                            </div>
                         </div>   
                     </div>
-                    <h4>Project Description:</h4><div class = "contentInfo"></div>
-                    <h4>Estimated Completion:</h4><div class = "contentInfo"></div>
-                    <h4>Project Deliverables:</h4><div class = "contentInfo"></div>
-                    
-                    
-                <div class = "bugsWrapper">    
+                    <div class="col-sm-4"><!-- String: projectDescription -->
+                    <h4>Project Description:</h4>
+                    </div>
+                    <div class="col-sm-8"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros.Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit. Donec convallis fringilla eros.
+                    </div>
+                    <div class="col-sm-4">
+                    <h4>Estimated Completion:</h4> <!-- String: estimatedHours -->
+                     </div> 
+                     <div class="col-sm-8"><br>Month/Day/Year
+                     </div>
+                     
+                     <div class="col-sm-4">
+                     <h4>Team Members:</h4><!-- String teamMember [] - String memberRole []-->
+                     </div>
+                      <div class="col-sm-8"><br><br>
+                        <div class = "member"><a href = "#">Team Member 1 - Role</a></div> 
+                        <div class = "member"><a href = "#">Team Member 2 - Role</a></div>
+                        <div class = "member"><a href = "#">Team Member 3 - Role</a></div>
+                        <div class = "member"><a href = "#">Team Member 4 - Role</a></div>
+                        <div class = "member"><a href = "#">Team Member 5 - Role</a></div>
+                        <br>                
+                </div>
+                
+                <div class="col-sm-12" style ="padding:0px">
+                <div class = "ReqWrapper">    <!--This is where we submit the project deliverables -->
+                    <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#loadReq" aria-expanded="false" aria-controls="collapseExample">
+                        Project Deliverables
+                    </a>
+                        <div class="collapse" id="loadReq">
+                          <div class="well">       
+                                <a class="btn btn-default" role="button">
+                                Req 1 
+                                </a>
+                                <a class="btn btn-default" role="button">
+                                Req 2
+                                </a>
+                                <a class="btn btn-default" role="button">
+                                Req 3 
+                                </a>
+                                
+                                <a class="btn btn-success" role="button">
+                                Req 4 <span class="glyphicon glyphicon-ok-circle"></span>
+                                </a>
+                                <a class="btn btn-success" role="button">
+                                Req 5 <span class="glyphicon glyphicon-ok-circle"></span>
+                                </a>
+                                <a class="btn btn-success" role="button">
+                                Req 6 <span class="glyphicon glyphicon-ok-circle"></span>
+                                </a>
+                          </div>
+                        </div> 
+                </div>    
+                <div class = "bugsWrapper">    <!--This drop down if for the current bugs in the system to be displayed -->
                     <a class="btn btn-warning btn-block" role="button" data-toggle="collapse" href="#loadProblems" aria-expanded="false" aria-controls="collapseExample">
                         View Current Issues
                     </a>
@@ -140,20 +196,21 @@ GroupProject:Project Tracking Software
                           </div>
                         </div> 
                 </div>
-                        <div class="description-footer">ProjectName: Info</div>
+                </div>
+                        <div class="description-footer">ProjectName: Description</div><!--input projectName -->
 
             <div class = "chart">
                 <div id="donutchart"></div>
                 <div id="chart_div"></div>
             </div>
-            <div class="description-footer">ProjectName: Info</div>
+            <div class="description-footer">ProjectName: Info</div><!--input projectName -->
             </div>
             
             <div id = "header">
               <div class="col-sm-9">
                 <h4 style = "color: white">Commits</h4>
               </div>
-              <div class="col-sm-3">  
+              <div class="col-sm-3">  <!--This section is the drop down button that will sort the commits-->
                         <div class="btn-group">
                           <button type="button" class="btn btn-primary">Sort by...</button>
                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -168,7 +225,7 @@ GroupProject:Project Tracking Software
               </div>
               <br><br>
             </div>
-            <div class = "commits"> 
+            <div class = "commits"> <!--This section is just the commit info, each of these will be generated when someone changes the project-->
                     <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   Commit1 12:07AM 9/10/2015
                 </a>

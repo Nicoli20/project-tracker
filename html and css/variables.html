@@ -56,13 +56,17 @@ struct Project{
 }
 
 struct commit{
-    int commitNum;
+    project.commitNum;
     int time;
     int date;
     
     String teamMem = memberName;
+    int hours;
     String revision;
-    String problemsDetected [];  
+    String problemsDetected [];
+
+    String finishedRequirment [];
+    String fixedProblems [];    
 }
 
 struct profile{
@@ -85,4 +89,15 @@ struct profile{
 String currentProjects[struct Project.projectName];
 String completedProjects[struct Project.projectName];
 String comments [numProjects] = {empty};
+
+
+in commit{
+    hours = scanf();
+    revision = scanf();
+    
+
+}
+
+
+
 

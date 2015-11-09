@@ -22,11 +22,10 @@ GroupProject:Project Tracking Software
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     
     <title>Projects</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" /><!--Pulls css from style 1-->
 </head>
 
-
-<body>
+<body><!--Beginning of comments -->
     <div id = "wrapper">
     <!-- Header wireframe section -->
     <header>
@@ -47,9 +46,7 @@ GroupProject:Project Tracking Software
     
     <!-- Main body wireframe section -->
         <main>  
-        
-        <div class = "content">
-        <div class = "space"></div>
+        <div class = "space"><!--Added space-->
         <div class = "border">
         <div class="jumbotron">
             <h1>PROJECTS</h1>
@@ -59,33 +56,38 @@ GroupProject:Project Tracking Software
         
 <!--*************************************************************************************************************************-->        
               
-              <div class="col-sm-8"> <h2>Developing Projects:</h2><div class = "contentInfo"></div></div>
-        <div class = "right">  
-        <div class="col-sm-4">
-        <br>
-                <a class="btn btn-primary" role="button" href="projectForm.html">Create Project</a>
-            </div></div>           
-<br><br><br>           
-                <div class = "projects">                  
-                    <a class="btn btn-primary btn-block" role="button" href="projectHome.html">
-                        Project1 - Last Edited: 12:16AM 9/10/2015
-                    </a> 
-                   </div> 
+        <div class="col-sm-8"> <h2>Developing Projects:</h2><div class = "contentInfo"></div></div>
+            <div class = "right"><!--Placing of the button-->  
+                <div class="col-sm-4">
+                <br>
+                <a class="btn btn-primary" role="button" href="projectForm.html">Create Project</a><!--Link to project form-->
+                </div>
+            </div>           
+                <br><br><br>           
+          
+          <!--This section will always have the three most recent projects that the user is part of. if the user 
+              has less then three projects, then it will only display the ones he is a part of-->
+            <div class = "projects">                  
+                <a class="btn btn-primary btn-block" role="button" href="projectHome.html">
+                    Project1 - Last Edited: 12:16AM 9/10/2015
+                </a> 
+            </div> 
                    
-                <div class = "projects">              
-                    <a class="btn btn-primary btn-block" role="button" href="projectHome.html">
-                        Project2 - Last Edited: 12:10AM 9/10/2015
-                    </a>  
-                </div>
+            <div class = "projects">              
+                <a class="btn btn-primary btn-block" role="button" href="projectHome.html">
+                    Project2 - Last Edited: 12:10AM 9/10/2015
+                </a>  
+            </div>
                 
-                <div class = "projects">              
-                    <a class="btn btn-primary btn-block" role="button" href="projectHome.html">  
-                      Project2 - Last Edited: 12:10AM 9/10/2015
-                    </a>  
-                </div>
+            <div class = "projects">              
+                <a class="btn btn-primary btn-block" role="button" href="projectHome.html">  
+                   Project2 - Last Edited: 12:10AM 9/10/2015
+                </a>  
+            </div>
+                
                 <a class="btn btn-default btn-block" role="button" data-toggle="collapse" href="#loadPprojects" aria-expanded="false" aria-controls="collapseExample">
-                      Load More ...
-                    </a>
+                      Load More ... <!--This section should generate the next three most recent projects-->
+                </a>
                         <div class="collapse" id="loadPprojects">
                           <div class="well">
                             ...
@@ -93,46 +95,36 @@ GroupProject:Project Tracking Software
                         </div> 
                 
             
-                <div class="col-sm-8"> <h2>Completed Projects:</h2><div class = "contentInfo"></div></div>
-                
+            <!--This section is for the projects the user has completed -->
+            <div class="col-sm-8"> <h2>Completed Projects:</h2><div class = "contentInfo"></div></div>
                 <div class = "right2"> 
-                <br>                
-            <div class = "buttonSpace">
-                <button type="button" class="btn btn-success">Edit</button>
-                <button type="button" class="btn btn-warning">Comment</button>
-            </div>
-            </div> 
+                    <br>                
+                    <div class = "buttonSpace">
+                        <button type="button" class="btn btn-success">Leave Comment</button>
+                    </div>
+                </div> 
           
             <br><br><br>
                 
 <!--*************************************************************************************************************************-->               
+            <!--3 most recent completed projects -->
                 <div class = "projects">
                 <a class="btn btn-success btn-block" role="button" href="projectHome.html">
                   Project3 - Completed: 12:07AM 9/10/2015   
                 </a>     
                 </div>
-                <!--<a class="btn btn-warning" role="button" href="projectHome.html">
-                    <span class="glyphicon glyphicon-align-justify"></span>
-                </a>-->
                 <div class = "projects">             
                     <a class="btn btn-success btn-block" role="button" href="projectHome.html">
                         Project4 - Completed: 12:10AM 9/10/2015
                     </a>    
                 </div>
-                <!--<a class="btn btn-warning" role="button" href="projectHome.html">
-                    <span class="glyphicon glyphicon-align-justify"></span>
-                </a>-->
-                
                 <div class = "projects">              
                     <a class="btn btn-success btn-block" role="button" href="projectHome.html">
                         Project5 - Completed: 12:10AM 9/10/2015
                     </a>
                         </div>    
                 </div>
-                <!--<a class="btn btn-warning" role="button" href="projectHome.html">
-                    <span class="glyphicon glyphicon-align-justify"></span>
-                </a>-->
-                
+
                 <a class="btn btn-default btn-block" role="button" data-toggle="collapse" href="#loadCprojects" aria-expanded="false" aria-controls="collapseExample">
                       Load More ...
                     </a>
