@@ -1,0 +1,154 @@
+<!--
+Group 7: Andrew Kordecki
+         Jonathan Schrader
+         Michael Reyes
+         Nicoli William
+  
+GroupProject:Project Tracking Software  
+9/8/2015
+-->
+
+<!DOCTYPE html> <!-- Beginning of the page-->
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" />
+    <!-- STATUS BAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+
+<body>
+    <div id = "wrapper">
+    <!-- Header wireframe section -->
+    <header>
+        <h1><a href = "projectFrontPage.html">TRACK'IT</a></h1>
+    </header>
+
+    <!-- Navigation wireframe section-->
+    <nav>
+        <ul>
+            <li><a href= "projectProjectPage.html">Projects</a></li>
+            <li><a href= "projectHome.html">Home</a></li>
+            <li><a href = "commitForm.html">Commit</a></li>
+            <li><a href = "profilePage.html">Profile</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <!-- Main body wireframe section -->
+        <main>  
+        <div class = "content">
+        <h2>Commit Form</h2>
+            <h4>Fill out the required fields and press submit to update the status of your project.</h4>
+            </br>
+                <form>
+                    <fieldset> 
+                    <div class="col-sm-8">
+                        <h3> Welcome Fisrtname Lastname</h3>                        
+                    </div>        
+                    
+                    <div class="col-sm-4">
+                    <br>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-primary">Commit to...</button>
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Project 1</a></li>
+                            <li><a href="#">Project 2</a></li>
+                            <li><a href="#">Project 3</a></li>
+                          </ul>
+                        </div>
+                    </div>    
+                        <br><br><br><br>
+                        
+                            <label>*Hours Worked: </label>
+                                <input type="number" name="numerical_selector_box" min="1" max="100" required><br><br>
+                            <label>*Project Revisions: </label>
+                                <textarea rows="2" cols="50" name="comment" form="usrform" required></textarea><br> 
+                            <label>Detected Problem: </label>
+                                <textarea rows="2" cols="50" name="comment" form="usrform"></textarea>
+                                
+                                <a class="btn btn-warning" role="button">
+                                    Add <span class="glyphicon glyphicon-plus"></span>
+                                </a>
+                             
+                            <br>
+                                <h6>*Required Fields</h6><br> 
+                                
+                            <div class = "buttonWrapper">    
+                                <div class = "requirmentWrapper">            
+                          <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#loadRequirments" aria-expanded="false" aria-controls="collapseExample">
+                                Completed Requirements
+                             </a>
+                        <div class="collapse" id="loadRequirments">
+                          <div class="well">
+                            <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 1 <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 2 <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 3 <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                *Requirement 4 <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                                
+                          </div>
+                        </div>            
+                    </div>    
+                    <br>
+                    <div class = "bugsWrapper">
+                                <a class="btn btn-warning btn-block" role="button" data-toggle="collapse" href="#loadProblems" aria-expanded="false" aria-controls="collapseExample">
+                                  Fixed Problems
+                                </a>
+                        <div class="collapse" id="loadProblems">
+                          <div class="well">
+                            <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                *Bug 1 <span class="glyphicon glyphicon-heart"></span>
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                *Bug 2 <span class="glyphicon glyphicon-heart"></span>
+                                </a>
+                                <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                *Bug 3 <span class="glyphicon glyphicon-heart"></span>
+                                </a>
+                          </div>
+                        </div> 
+                    </div>
+                    </div>
+                    <br>
+                    
+                        
+                        
+                            <button type="button" class="btn btn-primary">Commit</button>
+                            <button type="button" class="btn btn-success">Upload File</button>
+                        
+                            
+
+                                
+                        <br><br>
+                    </fieldset>
+                </form>
+            
+        </div>
+
+        <!-- Footer wireframe section -->
+        <footer>
+            Copyright &copy; 2015 Project 7 Productions 
+        </footer>
+
+        </main> <!-- End main wireframe -->
+    </div>  <!-- End wrapper wireframe -->    
+</body> <!-- End body wireframe -->
+</html> <!-- End accomodations page -->
