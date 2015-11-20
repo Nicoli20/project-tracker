@@ -42,11 +42,11 @@ GroupProject:Project Tracking Software
                             <form>
                                 <fieldset>
                                     Username:
-                                        <input type="text" name="username" required><br><br>
+                                        <input type="text" name="username" id="enterUsername" required><br><br>
                                     Password : 
-                                        <input type="password" name="psw" required><br><!--This area will be linked to the users account -->
+                                        <input type="password" name="psw" id="enterPassword" required><br><!--This area will be linked to the users account -->
                                     <br>
-                                    <a class="btn btn-default" role="button" href="projectProjectPage.html">
+                                    <a class="btn btn-default" role="button" onclick="checkLogin()" href="projectProjectPage.html">
                                     Login <!--This will check credentials. is String: userName [] in system, and is String: userPassword[] their password?-->
                                      </a>
                                     <a class="btn btn-default" role="button" href="createAccount.html">

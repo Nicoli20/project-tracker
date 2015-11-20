@@ -20,69 +20,7 @@ GroupProject:Project Tracking Software
     <script src="bootstrap-transition.js"></script> 
     <!-- JAVA SCRIPT -->
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      google.setOnLoadCallback(drawBasic);
-      
-      
-        $(".btn btn-default").click(function() {
-        // Instead of directly editing CSS, toggle a class
-        $(this).toggleClass("clicked");
-        });
-      
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Weekly Goal: 20hrs',  9],
-          ['Person1: 2hrs', 2],
-          ['Person2: 4hrs',  4],
-          ['Person3: 2hrs', 2],
-          ['Person4: 3hrs', 3]
-        ]);
-
-        var options = {
-          title: 'Employee Contribution',
-          chartArea: {width: '80%'},
-          pieHole: 0.3,
-          //slices: {
-            //0: { color: '#3369E8' },
-            //1: { color: '#AEC2FF' },
-            //2: { color: '#5C85FF' },
-            //3: { color: '#B6C4D4' },
-            //4: { color: '#7AA3CC' }
-          //}
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-      
-      function drawBasic() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['Weeks', 'Hours Committed Per Week',],
-        ['Week 1', 21],
-        ['Week 2', 33],
-        ['Week 3', 11],
-        ['Week 4', 21],
-      ]);
-
-      var options = {
-        title: 'Hours Committed Per Week',
-        chartArea: {width: '60%'},
-        hAxis: {
-          title: 'Total Hours',
-          minValue: 0
-        },     
-      };
-
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-      chart.draw(data, options);
-    }
-
-    </script>
+    <script src="variables.js"></script>
     
     <title>Home</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -114,6 +52,7 @@ GroupProject:Project Tracking Software
             
          <div class = "description">    
             <h2>Project Title</h2>
+            <h2 id="projectName"></h2>
             <div class="col-sm-12">
             <h4><br>Status of Project</h4>
             </div>
@@ -127,20 +66,20 @@ GroupProject:Project Tracking Software
                     <div class="col-sm-4"><!-- String: projectDescription -->
                     <h4>Project Description:</h4>
                     </div>
-                    <div class="col-sm-8"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros.
+                    <div class="col-sm-8" id="projectDescription"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis fringilla eros.Lorem ipsum dolor sit amet, 
                     consectetur adipiscing elit. Donec convallis fringilla eros.
                     </div>
                     <div class="col-sm-4">
                     <h4>Estimated Completion:</h4> <!-- String: estimatedHours -->
                      </div> 
-                     <div class="col-sm-8"><br>Month/Day/Year
+                     <div class="col-sm-8" id="estCompletion"><br>Month/Day/Year
                      </div>
                      
                      <div class="col-sm-4">
                      <h4>Team Members:</h4><!-- String teamMember [] - String memberRole []-->
                      </div>
-                      <div class="col-sm-8"><br><br>
+                      <div class="col-sm-8" id="teamMem"><br><br>
                         <div class = "member"><a href = "#">Team Member 1 - Role</a></div> 
                         <div class = "member"><a href = "#">Team Member 2 - Role</a></div>
                         <div class = "member"><a href = "#">Team Member 3 - Role</a></div>
@@ -155,7 +94,7 @@ GroupProject:Project Tracking Software
                         Project Deliverables
                     </a>
                         <div class="collapse" id="loadReq">
-                          <div class="well">       
+                          <div class="well" id="loadDeliverables">       
                                 <a class="btn btn-default" role="button">
                                 Req 1 
                                 </a>
@@ -183,7 +122,7 @@ GroupProject:Project Tracking Software
                         View Current Issues
                     </a>
                         <div class="collapse" id="loadProblems">
-                          <div class="well">       
+                          <div class="well" id="loadIssues">       
                             <a class="btn btn-default" role="button">
                                 *Bug 1 <span class="glyphicon glyphicon-heart"></span>
                                 </a>
@@ -197,13 +136,13 @@ GroupProject:Project Tracking Software
                         </div> 
                 </div>
                 </div>
-                        <div class="description-footer">ProjectName: Description</div><!--input projectName -->
+                        <div class="description-footer" id="projectName2">ProjectName: Description</div><!--input projectName -->
 
             <div class = "chart">
                 <div id="donutchart"></div>
                 <div id="chart_div"></div>
             </div>
-            <div class="description-footer">ProjectName: Info</div><!--input projectName -->
+            <div class="description-footer" id="projectName3">ProjectName: Info</div><!--input projectName -->
             </div>
             
             <div id = "header">
@@ -232,8 +171,8 @@ GroupProject:Project Tracking Software
                     <div class="collapse" id="collapseExample">
                       <div class="well">
                             <h4>Commited By:</h4><div class = "contentInfo"></div>
-                            <h4>Project Revision:</h4><div class = "contentInfo"></div>
-                            <h4>Problems Detected:</h4><div class = "contentInfo"></div>
+                            <h4>Project Revision:</h4><div class = "contentInfo" id="revisions"></div>
+                            <h4>Problems Detected:</h4><div class = "contentInfo" id="issues"></div>
                             
                          
                         

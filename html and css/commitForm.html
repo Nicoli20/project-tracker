@@ -71,9 +71,9 @@ GroupProject:Project Tracking Software
                         <br><br><br><br>
                         
                             <label>Hours Worked: </label><!--input: int: commitHours -->
-                                <input type="number" name="numerical_selector_box" min="1" max="100" required><br><br>
+                                <input type="number" name="numerical_selector_box" id="hours" min="1" max="100" required><br><br>
                             <label>Project Revisions: </label><!--input: String: commitRevision -->
-                                <textarea rows="2" cols="50" name="comment" form="usrform" required></textarea><br> 
+                                <textarea rows="2" cols="50" name="comment" form="usrform" id="revision" required></textarea><br> 
                                  
                                <br> 
                                 
@@ -86,18 +86,18 @@ GroupProject:Project Tracking Software
                           <div class="well">
                             <div class="col-sm-5">
                                     <label>Problem Detected: </label><!--input: String: bugName [] -->
-                                        <input type="text" name="text_box">
+                                        <input type="text" name="text_box" id="problemDetected">
                                     </div>
                                     <div class="col-sm-5">
                                     <label>Problem Description: </label><!--input: String: bugDescription [] -->    
-                                        <input type="text" name="text_box">
+                                        <input type="text" name="text_box" id="problemDescription">
                                     </div>
                                     <div class="col-sm-2">
                                     <br>
                                         <a class="btn btn-success" role="button">
                                         <!-- This button will generate buttons below. the buttons dont go anywhere--
                                         they are just a place holder-->
-                                             Add <span class="glyphicon glyphicon-plus"></span>
+                                             Add <span class="glyphicon glyphicon-plus" onclick="addIssue()"></span>
                                         </a>
                                     </div>
                                     <br><br><br><br><br>

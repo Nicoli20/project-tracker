@@ -43,22 +43,22 @@ GroupProject:Project Tracking Software
                         <div class = "userWrapper">
                         <div class="col-sm-6">
                              First name:<br>
-                              <input type="text" name="firstname" required><!--input: String: firstName-->
+                              <input type="text" name="firstname" id="firstName" required><!--input: String: firstName-->
                               <br>
                              Last name:<br>
-                              <input type="text" name="lastname" required><!--input: String: lastName-->  
+                              <input type="text" name="lastname" id="lastName" required><!--input: String: lastName-->  
                               <br><!--String: userName = firstName + lastName-->
                              Email:<br>
-                              <input type="text" name="mail" required><!--input: String: userEmail--> 
+                              <input type="text" name="mail" id="email" required><!--input: String: userEmail--> 
                               <br>
                              Username:<br>
-                              <input type="text" name="username" required><!--input: String: userName--> 
+                              <input type="text" name="username" id="userName" required><!--input: String: userName--> 
                               <br>                          
                              Password:<br>
-                              <input type="password" name="psw" required><!--input: String: userPassword-->
+                              <input type="password" name="psw" id="password" required><!--input: String: userPassword-->
                               <br>
                              Re-enter Password:<br><!--input: String: userPasswordcheck; if userPassword == userPasswordcheck return true-->
-                              <input type="password" name="repsw" required> 
+                              <input type="password" name="repsw" id="password2" required> 
                           <br>
                         </div> 
 
@@ -80,7 +80,7 @@ GroupProject:Project Tracking Software
                                 
                         </div>
                     <br>                        
-                            <button type="button" class="btn btn-primary">Submit</button><!--Creates the user info if everything is correctly inputed-->       
+                            <button type="button" class="btn btn-primary" onclick="checkAccount()">Submit</button><!--Creates the user info if everything is correctly inputed-->       
                         <br><br>
                         </div>
                     </fieldset>

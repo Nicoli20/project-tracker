@@ -53,13 +53,13 @@ GroupProject:Project Tracking Software
                         <fieldset> 
                             <br>
                                 <label >Project Title: </label>
-                                    <input type="text" name="text_box" autofocus required><br><br><!--Saved to String: projectName-->
+                                    <input type="text" name="text_box" id="projectName" autofocus required><br><br><!--Saved to String: projectName-->
                                 <label>Estimated Completion Date: </label>
-                                    <input type="date" name="date_box" requirment><br><br><!--Saved to String: completionDate -->                         
+                                    <input type="date" name="date_box" id="estCompletion" requirment><br><br><!--Saved to String: completionDate -->                         
                                 <label>Estimated Hours Till Completion: </label>
-                                    <input type="number" name="numerical_selector_box" min="1" max="100000" required><br><br><!--Saved to int: estimatedHours-->
+                                    <input type="number" name="numerical_selector_box" id="hoursGoal" min="1" max="100000" required><br><br><!--Saved to int: estimatedHours-->
                                 <label>Project Description: </label>
-                                    <textarea rows="4" cols="80" name="comment" form="usrform" required></textarea><br><!--Saved to String: projectDescription -->
+                                    <textarea rows="4" cols="80" name="comment" form="usrform" id="projectDescription" required></textarea><br><!--Saved to String: projectDescription -->
                                 
                                 <!--This section of the code is for adding prject deliverable to the project
                                         The deliverables will link to int: projectStatus
@@ -74,16 +74,16 @@ GroupProject:Project Tracking Software
                                             <div class="well">
                                                 <div class="col-sm-4">
                                                     <label>Deliverable: </label>
-                                                        <input type="text" name="text_box">
+                                                        <input type="text" name="text_box" id="deliverable">
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <label>Description: </label>    
-                                                        <input type="text" name="text_box">
+                                                        <input type="text" name="text_box" id="deliverableDescription">
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <br>
                                                     <a class="btn btn-danger" role="button">
-                                                        Add <span class="glyphicon glyphicon-plus"></span><!--Press this button to add deliverable to ticket queue -->
+                                                        Add <span class="glyphicon glyphicon-plus" onclick="addDeliverable()"></span><!--Press this button to add deliverable to ticket queue -->
                                                     </a>
                                                 </div>
                                                 <br><br><br><br><br>
@@ -99,23 +99,23 @@ GroupProject:Project Tracking Software
                                         <div class="well">
                                             <div class="col-sm-4">
                                                 <label>Member: </label>
-                                                    <input type="text" name="text_box">
+                                                    <input type="text" name="text_box" id="memberName">
                                             </div>
                                             <div class="col-sm-4">
                                                 <label>Role: </label>    
-                                                    <input type="text" name="text_box">
+                                                    <input type="text" name="text_box" id="memberRole">
                                             </div>
                                             <div class="col-sm-4">
                                                 <br>
                                                 <a class="btn btn-success" role="button">
-                                                    Add <span class="glyphicon glyphicon-plus"></span>
+                                                    Add <span class="glyphicon glyphicon-plus" onclick="addTeamMember()"></span>
                                                 </a>
                                             </div>
                                             <br><br><br><br>
                                         </div>
                                     </div>
                                 </div>
-                                <div class = "buttonSpace"><button type="button" class="btn btn-primary">Submit</button></div><br><br>                                                      
+                                <div class = "buttonSpace"><button type="button" class="btn btn-primary" id="createProject()">Submit</button></div><br><br>                                                      
                         </fieldset>
                     </form>
             
