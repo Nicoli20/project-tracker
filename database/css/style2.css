@@ -1,0 +1,289 @@
+/*
+Jonathan Schrader ********* 7/23/2015
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+   background-position: right;
+   background-repeat: no-repeat;
+   background-color: #5C8AE6;
+   color: #FFFFFF;
+   height: 60px;
+   padding-top: 13px;
+    
+
+}
+
+header h1 {
+margin: 0;
+padding-left:18px;
+}
+
+h1 a {
+    text-decoration: none;
+    color: white;
+}
+h1 a:hover {
+    text-decoration: none;
+    color: white;
+}
+h1 a:clicked {
+    text-decoration: none;
+    color: white;
+}
+
+#header{
+    margin-top: 10px;
+    word-spacing: 120px;
+    padding: 3px;
+    padding-left: 10px;
+    border-style: solid;  
+} 
+
+.buttonSpace{
+    padding-left: 20px;
+}
+
+.space{
+    padding-top: 20px;
+}
+.commits :hover{
+    background-color: #EBEBEB;
+    text-decoration: none;
+}
+
+.commits{
+    border-style: solid; 
+    border-top: none;
+    word-spacing: 120px;
+    padding: 3px;
+    padding-left: 10px; 
+}
+.image{
+
+}
+
+.opaque{
+	background: rgba(0, 0, 0, 0.25); 
+	padding: 20px;
+}
+
+.jumbotron{
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+
+	margin-bottom: 0px;
+    background-position: 0% 25%;
+    color: white;
+	text-shadow: black 0.3em 0.3em 0.3em;
+	background-image: url(../images/blue_repeating_pattern.png);
+}
+
+.front .jumbotron{
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+    
+    }
+
+.rowBlue{
+	padding: 5px;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+	background-image: url(../images/blue_repeating_pattern.png);
+}
+
+.h3Blue{
+	text-shadow: black 0.2em 0.2em 0.2em;
+	font-family: "Verdana", Times, serif;	
+	color: white;
+}
+
+.pBlue{
+	font-family: "Verdana", Times, serif;	
+	color: white
+}
+
+.jumbotron h1{
+    text-align: center;
+    font-family: "Verdana", Times, serif;
+}
+
+.projects{
+    border-style: solid;
+    text-align: center;
+    word-spacing: 40px;
+    padding: 3px;
+    padding-left: 10px; 
+}
+
+.description{
+    border: solid;
+    border-top: none;
+    margin-top: -10px;
+}
+
+.progress-bar{
+    width:70%;
+}
+
+.progress{
+    width: 80%;
+    margin-left: 8em;
+    border: 1px solid;
+}
+
+
+.description-footer{
+    text-align:center;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Rolman", serif;  
+    padding: 10px;
+    padding-top: 30px;
+}
+
+#wrapper{
+    margin:auto;
+    width: 80%;
+    background: -webkit-linear-gradient(#5C8AE6, #DCE4F5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5C8AE6, #DCE4F5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5C8AE6, #DCE4F5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5C8AE6, #DCE4F5);
+    min-width: 960px;
+    max-width: 2048px;
+
+    border: solid;
+}
+
+nav {   
+    font-weight: bold;
+    padding: 20px;
+    float: left;
+
+}
+
+nav a {
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 0;
+    font-family: Georgia, "Times New Rolman", serif; 
+}
+
+h2 {
+    color: #3399CC;
+    font-family: Georgia, "Times New Rolman", serif; 
+    text-shadow: 1px 1px #CCCCCC;
+}
+
+main h2 {
+    color: #3399CC;
+    font-family: Georgia, "Times New Rolman", serif; 
+    text-shadow: 1px 1px #CCCCCC;
+}
+
+h3 {
+   color: #000033;
+   font-family: Georgia, "Times New Rolman", serif;  
+}
+
+main ul {
+   list-style-image: url('images/marker.gif'); 
+}
+
+nav ul{
+   font-size: 1.2em;
+   margin: 0;
+   padding-left: 0;
+   list-style-type: none;
+}
+
+nav :link {
+   color: #F8F8F8;
+}
+
+
+nav :hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+table {
+    position: relative;
+    left: 45px;
+    border-collapse: collapse;
+}
+
+table, th, td{
+    border: 2px solid #3399CC; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F5FFFF;
+}
+
+tbody th:nth-child(2) {
+    text-align: left;
+    padding: 5px;
+}
+
+tbody tr:nth-child(1) th:nth-child(2){
+    text-align: center;
+}
+
+tbody tr:nth-child(1){
+    text-align: center;
+    color: white;
+    background-color: #00297A;
+}
+
+.staffContainer{
+    min-height: 220px;
+}
+
+
+
+label {
+    float: left;
+    width: 120px;
+    text-align: right;
+}
+
+.glyphicon.glyphicon-home{
+	font-size: 0.75em;
+}
+
+textarea {
+    margin-left: 3em;
+}
+
+.img-circle {
+    border: solid;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.img-circle-small{
+	border: solid;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.button {
+    background-color: #90C7E3;
+}
+
+footer {
+    font-size: 90%;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Rolman", serif;  
+	padding-bottom: 10px;
+}
