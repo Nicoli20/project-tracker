@@ -1,0 +1,50 @@
+<!DOCTYPE html> <!-- Beginning of the page-->
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" />
+    <!-- STATUS BAR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="bootstrap-transition.js"></script> 
+    <!-- JAVA SCRIPT -->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="variables.js"></script>
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+
+<body>
+     <!-- Main body wireframe section -->
+        <main>  
+        <div class = "content"> 
+        
+        <div class = "commits"> <!--This section is just the commit info, each of these will be generated when someone changes the project-->
+                <a class="btn btn-default btn-block" role="button" data-toggle="collapse" href="#collapseExample" id = "commitName" aria-expanded="false" aria-controls="collapseExample">
+                  
+                </a>
+                    <div class="collapse" id="collapseExample">
+                      <div class="well">
+                            <h4>Commited By:</h4><div class = "contentInfo"></div>
+                            <h4>Project Revision:</h4><div class = "contentInfo" id="revisions"></div>
+                            <h4>Problems Detected:</h4><div class = "contentInfo" id="issues"></div>
+                            
+                         
+                        
+                        <div class = "buttonSpace">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-warning">Comment</button>
+                        </div>
+                        
+                        <div class="description-footer">ProjectName: Commit1</div>
+                      </div>
+                    </div>        
+               
+            </div>
+     </div>
+    </main>
+  </body>
+</html>

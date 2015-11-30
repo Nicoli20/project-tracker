@@ -51,7 +51,7 @@ GroupProject:Project Tracking Software
                 <form>
                     <fieldset> 
                     <div class="col-sm-8">
-                        <h3> Welcome Fisrtname Lastname</h3>                        
+                        <h3> Welcome Fisrtname Lastname</h3><!--String: userName-->                        
                     </div>        
                     
                     <div class="col-sm-4">
@@ -61,7 +61,7 @@ GroupProject:Project Tracking Software
                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                           </button>
-                          <ul class="dropdown-menu" role="menu">
+                          <ul class="dropdown-menu" role="menu"> <!--Users current project titles appear here -->
                             <li><a href="#">Project 1</a></li>
                             <li><a href="#">Project 2</a></li>
                             <li><a href="#">Project 3</a></li>
@@ -70,27 +70,61 @@ GroupProject:Project Tracking Software
                     </div>    
                         <br><br><br><br>
                         
-                            <label>*Hours Worked: </label>
-                                <input type="number" name="numerical_selector_box" min="1" max="100" required><br><br>
-                            <label>*Project Revisions: </label>
-                                <textarea rows="2" cols="50" name="comment" form="usrform" required></textarea><br> 
-                            <label>Detected Problem: </label>
-                                <textarea rows="2" cols="50" name="comment" form="usrform"></textarea>
+                            <label>Hours Worked: </label><!--input: int: commitHours -->
+                                <input type="number" name="numerical_selector_box" id="hours" min="1" max="100" required><br><br>
+                            <label>Project Revisions: </label><!--input: String: commitRevision -->
+                                <textarea rows="2" cols="50" name="comment" form="usrform" id="revision" required></textarea><br> 
+                                 
+                               <br> 
                                 
-                                <a class="btn btn-warning" role="button">
-                                    Add <span class="glyphicon glyphicon-plus"></span>
+                            <div class = "buttonWrapper">
+                        <div class = "problemsWrapper">
+                            <a class="btn btn-success btn-block" role="button" data-toggle="collapse" href="#loadIssues" aria-expanded="false" aria-controls="collapseExample">
+                                Detected Problems
+                             </a>
+                        <div class="collapse" id="loadIssues">
+                          <div class="well">
+                            <div class="col-sm-5">
+                                    <label>Problem Detected: </label><!--input: String: bugName [] -->
+                                        <input type="text" name="text_box" id="problemDetected">
+                                    </div>
+                                    <div class="col-sm-5">
+                                    <label>Problem Description: </label><!--input: String: bugDescription [] -->    
+                                        <input type="text" name="text_box" id="problemDescription">
+                                    </div>
+                                    <div class="col-sm-2">
+                                    <br>
+                                        <a class="btn btn-success" role="button">
+                                        <!-- This button will generate buttons below. the buttons dont go anywhere--
+                                        they are just a place holder-->
+                                             Add <span class="glyphicon glyphicon-plus" onclick="addIssue()"></span>
+                                        </a>
+                                    </div>
+                                    <br><br><br><br><br>
+                                <!-- New buttons will do in this area-->
+                                <div id = "generate-issues">
+                                <a class="btn btn-success" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                New problem 1 <span class="glyphicon glyphicon-menu-right"></span>
                                 </a>
-                             
-                            <br>
-                                <h6>*Required Fields</h6><br> 
-                                
-                            <div class = "buttonWrapper">    
+                                <a class="btn btn-success" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                New problem 2 <span class="glyphicon glyphicon-menu-right"></span>
+                                </a>
+                                <a class="btn btn-success" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
+                                New problem 3 <span class="glyphicon glyphicon-menu-right"></span>
+                                </a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                                 <div class = "requirmentWrapper">            
                           <a class="btn btn-primary btn-block" role="button" data-toggle="collapse" href="#loadRequirments" aria-expanded="false" aria-controls="collapseExample">
                                 Completed Requirements
                              </a>
                         <div class="collapse" id="loadRequirments">
                           <div class="well">
+                          <!-- Have Requirment buttons generate in this well-->
+                          <div id = "generate-requirement">
                             <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
                                 *Requirement 1 <span class="glyphicon glyphicon-ok"></span>
                                 </a>
@@ -103,7 +137,7 @@ GroupProject:Project Tracking Software
                                 <a class="btn btn-default" role="button" data-toggle="collapse" href="#fill" aria-expanded="false" aria-controls="collapseExample">
                                 *Requirement 4 <span class="glyphicon glyphicon-ok"></span>
                                 </a>
-                                
+                            </div>    
                           </div>
                         </div>            
                     </div>    
@@ -114,6 +148,8 @@ GroupProject:Project Tracking Software
                                 </a>
                         <div class="collapse" id="loadProblems">
                           <div class="well">
+                          <!--Generate bugs-->
+                          <div id = "generate-bugs">
                             <a class="btn btn-default" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
                                 *Bug 1 <span class="glyphicon glyphicon-heart"></span>
                                 </a>
@@ -124,18 +160,14 @@ GroupProject:Project Tracking Software
                                 *Bug 3 <span class="glyphicon glyphicon-heart"></span>
                                 </a>
                           </div>
+                          </div>
                         </div> 
                     </div>
                     </div>
                     <br>
                     
-                        
-                        
-                            <button type="button" class="btn btn-primary">Commit</button>
-                            <button type="button" class="btn btn-success">Upload File</button>
-                        
-                            
-
+                            <button type="button" class="btn btn-primary">Commit</button><!--Commit data to commit data-->
+                            <button type="button" class="btn btn-success">Upload File</button><!--upload a file for the commit-->
                                 
                         <br><br>
                     </fieldset>
