@@ -12,7 +12,11 @@
 	$type = $_POST['type'];
 	$id = $_POST['id'];
 	
+	$userLevel = $_SESSION['userLevel'];
+	
 	$returnVals = array();
+	
+	$returnVals['userLevel'] = $userLevel;
 	
 	if($type == 'requirement'){
 		$stmt = $connection->prepare("SELECT name, description, dueDate, completed FROM Requirement WHERE rid = ?");
