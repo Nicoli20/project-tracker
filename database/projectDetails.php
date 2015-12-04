@@ -24,6 +24,7 @@
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/jquery.treegrid.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 
 	<?php require('phpScripts/commonPHP.php'); ?>
 	<?php require('phpScripts/projectDetailsPHP.php') ?>
@@ -40,6 +41,15 @@
 	.treeGrandChild{
 		margin-left: 30px;
 	}
+	.close(
+		opacity: 1;
+	)
+	.modal-header(
+	    background-image: url(images/btexture4.jpg);
+	)
+	.modal-title(
+		color: white;
+	)
 	</style>
 </head>
 
@@ -50,7 +60,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
 					<h4 class="modal-title" id="myModalLabel"></h4>
 				</div>
 				<div class="modal-body">
@@ -65,10 +75,23 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
 					<h4 class="modal-title" id="infoModalLabel"></h4>
 				</div>
 				<div class="modal-body" id="infoModalBody">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+					<h4 class="modal-title" id="confirmModalLabel"></h4>
+				</div>
+				<div class="modal-body" id="confirmModalBody">
 				</div>
 			</div>
 		</div>
@@ -138,7 +161,7 @@
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="#" id="viewMyTasks">
 								<div class="panel-footer">
 									<span class="pull-left" style="color:#337AB7">View My Tasks</span>
 									<span class="pull-right" style="color:#337AB7"><i class="fa fa-arrow-circle-right"></i></span>
@@ -160,7 +183,7 @@
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="#" id="viewMyDefects">
 								<div class="panel-footer">
 									<span class="pull-left">View My Defects</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -177,12 +200,12 @@
 										<i class="fa fa-upload fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge"><?php getNumNewCommits(); ?></div>
-										<div>New Commits</div>
+										<div class="huge"><?php getNumCommits(); ?></div>
+										<div>Commits</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="#" id="viewCommits">
 								<div class="panel-footer">
 									<span class="pull-left">View Commits</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -196,17 +219,17 @@
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-xs-3">
-										<i class="fa fa-comments fa-5x"></i>
+										<i class="fa fa-exclamation-triangle fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge"><?php getNumNewDiscussions(); ?></div>
-										<div>New Discussions</div>
+										<div class="huge"><?php getNumAlerts(); ?></div>
+										<div>Alerts</div>
 									</div>
 								</div>
 							</div>
-							<a href="#">
+							<a href="#" id="viewAlerts">
 								<div class="panel-footer">
-									<span class="pull-left">View Discussions</span>
+									<span class="pull-left">View Alerts</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
@@ -225,16 +248,16 @@
 								<div class="row">
 									<div class="control-group">
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
-											<button class="btn btn-primary center-block btn-block">Create Commit</button>
+											<button class="btn btn-primary center-block btn-block" id="createCommitButton">Create Commit</button>
 										</div>
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
-											<button class="btn btn-primary center-block btn-block">Create Discussion</button>
+											<button class="btn btn-primary center-block btn-block" id="createAlertButton">Create Alert</button>
 										</div>
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
 											<button class="btn btn-primary center-block btn-block" id="viewProjectTreeButton">View Project Tree</button>
 										</div>
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
-											<button class="btn btn-primary center-block btn-block">Create Defect</button>
+											<button class="btn btn-primary center-block btn-block" id="createDefectButton">Create Defect</button>
 										</div>
 									<?php if($_SESSION['userLevel'] == 1) : ?>
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
@@ -244,10 +267,10 @@
 											<button class="btn btn-primary center-block btn-block" id="createTaskButton">Create Task</button>
 										</div>
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
-											<button class="btn btn-primary center-block btn-block">Assign Task</button>
+											<button class="btn btn-primary center-block btn-block" id="assignTaskButton">Assign Task</button>
 										</div>
 										<div class="col-lg-3 col-md-6 center-block" style="margin-bottom:15px;">
-											<button class="btn btn-primary center-block btn-block">Assign Defect</button>
+											<button class="btn btn-primary center-block btn-block" id="assignDefectButton">Assign Defect</button>
 										</div>
 									<?php endif; ?>
 									</div>
@@ -262,6 +285,52 @@
 					</div>
 				</div>
 				<div class="row" id="dynamicContent">
+				</div>
+				<div class="row" id="chartContent" style="display:none;">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-heading" id="chartLabel">
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-12" id="chartError">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="row" id="chartAreaBefore">
+										</div>
+										<div class="row">
+											<div class="col-lg-12">
+												<div id="chartArea">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="row" id="chartArea2Before">
+										</div>
+										<div class="row">
+											<div class="col-lg-12">
+												<div id="chartArea2">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-lg-12">
+												<p class="text-center">Week Of</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-1 col-lg-offset-10">
+										<button class="btn btn-default" id="closeChartsButton">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
@@ -290,7 +359,13 @@
 										<p class="form-control-static">Number of Tasks: <?php getNumTasks(); ?></p>
 									</div>
 									<div class="col-lg-6">
-										<p class="form-control-static">Number of Open Defects: <?php getNumOpenDefects(); ?></p>
+										<p class="form-control-static">Number of Completed Tasks: <?php getNumCompletedTasks(); ?></p>
+									</div>
+									<div class="col-lg-6">
+										<p class="form-control-static">Number of Defects: <?php getNumDefects(); ?></p>
+									</div>
+									<div class="col-lg-6">
+										<p class="form-control-static">Number of Completed Defects: <?php getNumCompletedDefects(); ?></p>
 									</div>
 								</div>
 							</div>
@@ -318,6 +393,8 @@
 	<script src="js/projectDetailsJSMethods.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="js/jquery.treegrid.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
 </body>
 

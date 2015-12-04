@@ -64,6 +64,13 @@
 			echo '<p style="text-align:center">0%</p>';
 		}
 		else{
+			$stmt = $connection->prepare("SELECT completed FROM Project WHERE pid = ?");
+			$stmt->bind_param('i', $pid);
+			$stmt->execute();
+			$stmt->bind_result($completed);
+			$stmt->store_result();
+			$stmt->fetch();
+			
 			$stmt = $connection->prepare("SELECT COUNT(*) FROM Requirement WHERE pid = ? AND completed = 1");
 			$stmt->bind_param('i', $pid);
 			$stmt->execute();
@@ -73,11 +80,15 @@
 			
 			$percent = floor(($numCompletedReqs / $numReqs) * 100);
 			
+			if($percent == 100 && $completed == 0){
+				$percent = 99;
+			}
+			
 			if($percent == 0){
 				echo '<p style="text-align:center">0%</p>';
 			}
 			else{
-				echo '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' . "{$percent}" . 'aria-valuemin="0" aria-valuemax="100" style="width:' . "{$percent}" . '%">' .
+				echo '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="' . "{$percent}" . '" aria-valuemin="0" aria-valuemax="100" style="width:' . "{$percent}" . '%">' .
 						"{$percent}" . '%' . '</div>';
 			}
 		}
@@ -97,7 +108,7 @@
 		$pid = $_SESSION['currentProject'];
 		$uid = $_SESSION['uid'];
 		
-		$stmt = $connection->prepare("SELECT COUNT(*) FROM AssignedTask usertask, Task task, Requirement req WHERE usertask.uid = ? AND usertask.tid = task.tid AND task.rid = req.rid AND req.pid = ?");
+		$stmt = $connection->prepare("SELECT COUNT(*) FROM AssignedTask usertask, Task task, Requirement req WHERE usertask.uid = ? AND usertask.tid = task.tid AND task.rid = req.rid AND req.pid = ? AND task.completed = 0");
 		$stmt->bind_param('ii', $uid, $pid);
 		$stmt->execute();
 		$stmt->bind_result($count);
@@ -121,7 +132,7 @@
 		$pid = $_SESSION['currentProject'];
 		$uid = $_SESSION['uid'];
 		
-		$stmt = $connection->prepare("SELECT COUNT(*) FROM AssignedDefect userdefect, Defect defect WHERE userdefect.uid = ? AND userdefect.did = defect.did AND defect.pid = ?");
+		$stmt = $connection->prepare("SELECT COUNT(*) FROM AssignedDefect userdefect, Defect defect WHERE userdefect.uid = ? AND userdefect.did = defect.did AND defect.pid = ? AND defect.completed = 0");
 		$stmt->bind_param('ii', $uid, $pid);
 		$stmt->execute();
 		$stmt->bind_result($count);
@@ -131,11 +142,30 @@
 		echo "{$count}";
 	}
 	
-	function getNumNewCommits(){
-		echo '8';
+	function getNumCommits(){
+		$mysql_host = $_ENV["OPENSHIFT_MYSQL_DB_HOST"];
+		$mysql_user = $_ENV["OPENSHIFT_MYSQL_DB_USERNAME"];
+		$mysql_password = $_ENV["OPENSHIFT_MYSQL_DB_PASSWORD"];
+		$mysql_database = 'trackit';
+		$connection = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+		
+		if($connection->connect_errno){
+			echo json_encode("Database connection failed. Please try again later. Error: {$connection->connect_errno}.");
+		}	
+		
+		$pid = $_SESSION['currentProject'];
+		
+		$stmt = $connection->prepare("SELECT COUNT(commit.cid) FROM Commit commit, Task task, Requirement req WHERE req.pid = ? AND task.rid = req.rid AND commit.tid = task.tid");
+		$stmt->bind_param('i', $pid);
+		$stmt->execute();
+		$stmt->bind_result($count);
+		$stmt->store_result();
+		$stmt->fetch();
+		
+		echo "{$count}";
 	}
 	
-	function getNumNewDiscussions(){
+	function getNumAlerts(){
 		echo '2';
 	}
 	
@@ -285,7 +315,7 @@
 		
 		$pid = $_SESSION['currentProject'];
 		
-		$stmt = $connection->prepare("SELECT COUNT(*) FROM Project project, Requirement req, Task task WHERE project.pid = req.pid AND req.rid = task.rid AND project.pid = ? AND task.completed = 0");
+		$stmt = $connection->prepare("SELECT COUNT(*) FROM Project project, Requirement req, Task task WHERE project.pid = req.pid AND req.rid = task.rid AND project.pid = ?");
 		$stmt->bind_param('i', $pid);
 		$stmt->execute();
 		$stmt->bind_result($count);
@@ -295,7 +325,7 @@
 		echo "{$count}";
 	}
 	
-	function getNumOpenDefects(){
+	function getNumCompletedTasks(){
 		$mysql_host = $_ENV["OPENSHIFT_MYSQL_DB_HOST"];
 		$mysql_user = $_ENV["OPENSHIFT_MYSQL_DB_USERNAME"];
 		$mysql_password = $_ENV["OPENSHIFT_MYSQL_DB_PASSWORD"];
@@ -308,7 +338,54 @@
 		
 		$pid = $_SESSION['currentProject'];
 		
-		$stmt = $connection->prepare("SELECT COUNT(*) FROM Project project, Defect defect WHERE project.pid = defect.pid AND project.pid = ? AND defect.completed = 0");
+		$stmt = $connection->prepare("SELECT COUNT(*) FROM Project project, Requirement req, Task task WHERE project.pid = req.pid AND req.rid = task.rid AND project.pid = ? AND task.completed = 1");
+		$stmt->bind_param('i', $pid);
+		$stmt->execute();
+		$stmt->bind_result($count);
+		$stmt->store_result();
+		$stmt->fetch();
+		
+		echo "{$count}";
+	}
+	
+		
+	function getNumDefects(){
+		$mysql_host = $_ENV["OPENSHIFT_MYSQL_DB_HOST"];
+		$mysql_user = $_ENV["OPENSHIFT_MYSQL_DB_USERNAME"];
+		$mysql_password = $_ENV["OPENSHIFT_MYSQL_DB_PASSWORD"];
+		$mysql_database = 'trackit';
+		$connection = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+		
+		if($connection->connect_errno){
+			echo json_encode("Database connection failed. Please try again later. Error: {$connection->connect_errno}.");
+		}	
+		
+		$pid = $_SESSION['currentProject'];
+		
+		$stmt = $connection->prepare("SELECT COUNT(*) FROM Project project, Defect defect WHERE project.pid = defect.pid AND project.pid = ?");
+		$stmt->bind_param('i', $pid);
+		$stmt->execute();
+		$stmt->bind_result($count);
+		$stmt->store_result();
+		$stmt->fetch();
+		
+		echo "{$count}";
+	}
+	
+	function getNumCompletedDefects(){
+		$mysql_host = $_ENV["OPENSHIFT_MYSQL_DB_HOST"];
+		$mysql_user = $_ENV["OPENSHIFT_MYSQL_DB_USERNAME"];
+		$mysql_password = $_ENV["OPENSHIFT_MYSQL_DB_PASSWORD"];
+		$mysql_database = 'trackit';
+		$connection = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_database);
+		
+		if($connection->connect_errno){
+			echo json_encode("Database connection failed. Please try again later. Error: {$connection->connect_errno}.");
+		}	
+		
+		$pid = $_SESSION['currentProject'];
+		
+		$stmt = $connection->prepare("SELECT COUNT(*) FROM Project project, Defect defect WHERE project.pid = defect.pid AND project.pid = ? AND defect.completed = 1");
 		$stmt->bind_param('i', $pid);
 		$stmt->execute();
 		$stmt->bind_result($count);

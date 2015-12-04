@@ -11,6 +11,20 @@
 	
 	$pid = $_SESSION['currentProject'];
 	
+	$stmt = $connection->prepare("SELECT COUNT(*) FROM Requirement WHERE pid = ? AND completed = 0");
+	$stmt->bind_param('i', $pid);
+	$stmt->execute();
+	$stmt->bind_result($countReqs);
+	$stmt->store_result();
+	$stmt->fetch();
+	
+	if($countReqs > 0){
+		$button = '<button class="btn btn-primary" id="completeProjectButton" style="display:none;">Complete Project</button>';
+	}
+	else{
+		$button = '<button class="btn btn-primary" id="completeProjectButton">Complete Project</button>';
+	}
+	
 	$stmt = $connection->prepare("SELECT req.rid, req.name FROM Requirement req WHERE req.pid = ?");
 	$stmt->bind_param('i', $pid);
 	$stmt->execute();
@@ -43,11 +57,11 @@
 	
 		$html = '<table class="table tree-2 table-bordered table-striped table-condensed">' .
 				'<tr class="treegrid-1">' .
-					'<td>' . "{$name}" . '</td><td></td>' .
+					'<td>' . "{$name}" . '</td><td>' . "{$button}" . '</td>' .
 				'</tr>';
 				
 		foreach($requirements as $requirement){
-			$html = $html . '<tr class="treegrid-' . $nodeId . ' treegrid-parent-1">' . '<td>' . "{$requirement['name']}" . '</td><td><button class="btn btn-primary center-block" id="requirementSPLIT' . "{$requirement['rid']}" . '">More Info</button></td>';
+			$html = $html . '<tr class="treegrid-' . $nodeId . ' treegrid-parent-1">' . '<td>' . "{$requirement['name']}" . '</td><td><button class="btn btn-primary center-block treebtn" id="requirementSPLIT' . "{$requirement['rid']}" . '">More Info</button></td>';
 			
 			$parentNodeId = $nodeId;
 			$nodeId++;
@@ -59,7 +73,7 @@
 			$stmt->store_result();
 			
 			while($stmt->fetch()){
-				$html = $html . '<tr class="treegrid-' . "{$nodeId}" . ' treegrid-parent-' .  "{$parentNodeId}" . '">' . '<td>' . "{$name}" . '</td><td><button class="btn btn-primary center-block" id="taskSPLIT' . "{$tid}" . '">More Info</button></td>';
+				$html = $html . '<tr class="treegrid-' . "{$nodeId}" . ' treegrid-parent-' .  "{$parentNodeId}" . '">' . '<td>' . "{$name}" . '</td><td><button class="btn btn-primary center-block treebtn" id="taskSPLIT' . "{$tid}" . '">More Info</button></td>';
 				$nodeId++;
 			}
 		}

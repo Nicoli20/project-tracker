@@ -142,6 +142,7 @@
 					</form>
 				</div>
 				<br>
+				<hr>
 				<div class="row">
 					<div class="col-lg-12">
 						<h4>Step 2: Add Team Members</h4>
@@ -185,7 +186,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<button class="btn btn-primary" id="createProjectButton">Create</button>
+						<button class="btn btn-success" id="createProjectButton">Create</button>
 					</div>
 				</div>
 				<br>
